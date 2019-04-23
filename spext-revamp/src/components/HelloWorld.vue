@@ -148,10 +148,12 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
           .classList.remove("borderTop");
       }
       this.activeTodoIndex = i;
-      if(this.activeDraggedItem >= i) {
+      if (this.activeDraggedItem >= i) {
         document.getElementById("todo-wrapper" + i).classList.add("borderTop");
       } else {
-        document.getElementById("todo-wrapper" + i).classList.add("borderBottom");
+        document
+          .getElementById("todo-wrapper" + i)
+          .classList.add("borderBottom");
       }
     },
     dragLeave(ev, i) {
@@ -250,12 +252,12 @@ body {
 .handles {
   opacity: 0 !important;
   display: flex;
-  padding: 0 4px; 
+  padding: 0 4px;
 }
 .handles i {
   margin: 0 !important;
   padding: 0 !important;
-  color: rgba(51, 51, 51,0.4);
+  color: rgba(51, 51, 51, 0.4);
 }
 .todo-list {
   list-style-type: none;

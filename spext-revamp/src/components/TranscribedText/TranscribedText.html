@@ -1,0 +1,67 @@
+<div class="transcribe-text-container">
+    <div class="todo-list">
+        <div class="todo-wrapper" v-for="(item, i) in todos" v-bind:key="i" @dragstart="dragStart(i, $event)"
+            @dragover.prevent @dragenter="dragEnter($event, i)" @dragleave="dragLeave($event, i)" @dragend="dragEnd"
+            @drop="dragFinish(i, $event)" v-bind:id="'todo-wrapper' + i">
+            <div class="transcribe-text-block">
+                <div class="handle-container">
+                    <div class="icon label-icon" v-bind:id="'label'+ i" v-on:click="showLabelModal=!showLabelModal">
+                        <i v-tooltip.left="'Label'" class="fa fa-tag"></i>
+                    </div>
+
+                    <div v-if="showLabelModal">
+                        <div class="color-palette-container">
+                            <div class="palette-header-container">
+                                <div class="header">
+                                    <span>Label Name</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="icon drag-icon" v-bind:id="'drag'+i" @mousedown="addEventListener($event)">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
+                    <div class="icon add-icon" v-bind:id="'add'+ i " v-on:click="showAddModal=!showAddModal">
+                        <i v-tooltip.bottom-end="'Click to add'" class="fa fa-plus-circle"></i>
+                    </div>
+
+                    <div v-if="showAddModal">
+                        <div class="add-action-container">
+                            <div class="file-container">
+                                <div class="icon-container">
+                                    <div class="file-icon-wrapper">
+                                        <i class="fa fa-file-audio"></i>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="title">File</div>
+                                    <div class="sub-title">Add a media or transcribed file</div>
+                                </div>
+                            </div>
+                            <div class="paragraph-break-container">
+                                <div class="icon-container">
+                                    <div class="paragraph-icon-wrapper">
+                                        <i class="fa fa-paragraph"></i>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="title">Paragraph Break</div>
+                                    <div class="sub-title">Keyboard Shortcut-Enter Key</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="todo-text-block">
+                    <div class="todo-item">
+                        <span :class="{done: item.done}">{{ item.title }}</span>
+                    </div>
+                    <!-- <div v-bind:id="i"><textarea v-model="item.title"></textarea></div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

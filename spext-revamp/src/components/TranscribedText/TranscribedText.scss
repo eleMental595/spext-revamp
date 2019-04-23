@@ -1,0 +1,245 @@
+.transcribe-text-container {
+    .todo-list {
+        width: 75%;
+        margin: 0 auto;
+        border: 1px solid lightgray;
+        padding: 16px;
+
+        .todo-wrapper {
+            .transcribe-text-block {
+                display: flex;
+                padding: 0 0 16px 0;
+
+                .handle-container {
+                    display: flex;
+
+                    .icon {
+                        color: lightgray;
+                        padding: 8px 8px 0 0;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #1899F7;
+                        }
+                    }
+
+                    .drag-icon {
+                        display: flex;
+                    }
+                }
+
+                .todo-text-block {
+                    cursor: pointer;
+
+
+
+                    .todo-item {
+                        border-radius: 2px;
+                        padding: 0px 8px;
+                        margin-bottom: 3px;
+                        background-color: #fff;
+                        font-size: 22px;
+
+                    }
+                }
+            }
+        }
+
+        .border-top {
+            border-top: 2px solid lightgray;
+        }
+
+        .border-bottom {
+            border-bottom: 2px solid lightgray;
+        }
+
+
+    }
+
+    .color-palette-container {
+        border: 1px solid lightgray;
+        border-radius: 6px;
+        width: 200px;
+        height: 160px;
+        position: absolute;
+        top: 88px;
+        left: 176px;
+        -webkit-box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        -moz-box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        background: white;
+
+        .palette-header-container {
+            display: flex;
+            justify-content: center;
+
+            .header {
+                padding: 16px 24px 8px 24px;
+                border-bottom: 1px solid lightgray;
+
+                span {
+                    color: lightgray;
+                }
+            }
+        }
+    }
+
+    .add-action-container {
+        border: 1px solid lightgray;
+        border-radius: 6px;
+        position: absolute;
+        top: 64px;
+        left: 236px;
+        -webkit-box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        -moz-box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        box-shadow: 0px 0px 2px 0px rgba(211, 211, 211, 1);
+        background: white;
+
+        .file-container,
+        .paragraph-break-container {
+            display: flex;
+            padding: 16px;
+
+            .description {
+                display: flex;
+                flex-direction: column;
+                padding-left: 16px;
+                font-size: 14px;
+
+                .title {
+                    font-weight: bold;
+                }
+            }
+
+            .icon-container {
+                border: 1px solid lightgray;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+
+
+        }
+
+        .file-container {
+            border-bottom: 1px solid lightgray;
+        }
+
+    }
+
+}
+
+.hidden-drag-ghost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.01;
+    visibility: hidden;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.draggedItem .todo-item {
+    box-shadow: 1px 1px 2px 2px #ccc;
+    background-color: white;
+    padding: 16px;
+}
+
+
+
+
+.tooltip {
+    display: block !important;
+    z-index: 10000;
+
+    .tooltip-inner {
+        background: black;
+        color: white;
+        border-radius: 8px;
+        padding: 5px 10px 4px;
+    }
+
+    .tooltip-arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        margin: 5px;
+        border-color: black;
+        z-index: 1;
+    }
+
+    &[x-placement^="top"] {
+        margin-bottom: 5px;
+
+        .tooltip-arrow {
+            border-width: 5px 5px 0 5px;
+            border-left-color: transparent !important;
+            border-right-color: transparent !important;
+            border-bottom-color: transparent !important;
+            bottom: -5px;
+            left: calc(50% - 5px);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &[x-placement^="bottom"] {
+        margin-top: 5px;
+
+        .tooltip-arrow {
+            border-width: 0 5px 5px 5px;
+            border-left-color: transparent !important;
+            border-right-color: transparent !important;
+            border-top-color: transparent !important;
+            top: -5px;
+            left: calc(50% - 5px);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &[x-placement^="right"] {
+        margin-left: 5px;
+
+        .tooltip-arrow {
+            border-width: 5px 5px 5px 0;
+            border-left-color: transparent !important;
+            border-top-color: transparent !important;
+            border-bottom-color: transparent !important;
+            left: -5px;
+            top: calc(50% - 5px);
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &[x-placement^="left"] {
+        margin-right: 5px;
+
+        .tooltip-arrow {
+            border-width: 5px 0 5px 5px;
+            border-top-color: transparent !important;
+            border-right-color: transparent !important;
+            border-bottom-color: transparent !important;
+            right: -5px;
+            top: calc(50% - 5px);
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &[aria-hidden='true'] {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .15s, visibility .15s;
+    }
+
+    &[aria-hidden='false'] {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .15s;
+    }
+}
