@@ -45,6 +45,11 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.direction-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .menu-item .menu-list {
     display: flex;
     padding: 8px;
@@ -59,7 +64,7 @@
     border: 1.5px solid #ececec;
     -ms-flex-item-align: center;
     align-self: center;
-    padding: 6px 3px;
+    padding: 6px;
     margin: 8px;
 }
 
