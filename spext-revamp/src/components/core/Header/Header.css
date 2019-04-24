@@ -32,8 +32,8 @@
     font-size: 14px;
     list-style: none;
     position: absolute;
-    left: 568px;
-    top: 74px;
+    /* left: 568px;
+    top: 74px; */
     -webkit-box-shadow: 0px 5px 4px 0px rgba(189, 189, 189, 1);
     -moz-box-shadow: 0px 5px 4px 0px rgba(189, 189, 189, 1);
     box-shadow: 0px 5px 4px 0px rgba(189, 189, 189, 1);

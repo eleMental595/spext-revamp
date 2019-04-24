@@ -4,10 +4,19 @@
 export default {
   data() {
     return {
-      showMenu: false
+      showMenu: false,
+      leftPos: "",
+      topPos: ""
     };
   },
-  methods: {}
+  methods: {
+    openTranscript(event) {
+      this.showMenu = !this.showMenu;
+      console.log(this.$refs);
+      this.leftPos = this.$refs.editTranscript.offsetLeft + "px";
+      this.topPos = this.$refs.navbar.offsetHeight - 8 + "px";
+    }
+  }
 };
 </script>
 
