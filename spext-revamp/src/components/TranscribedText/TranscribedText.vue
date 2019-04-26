@@ -20,7 +20,8 @@ export default {
         { code: "#673ab5" },
         { code: "#9c25b1" },
         { code: "#e48130" }
-      ]
+      ],
+      numbers: [1, 2, 3, 4, 5, 6]
     };
   },
   //   computed() {
@@ -233,6 +234,21 @@ export default {
         "label" + selectedIndex
       ).style.color = selectedColorCode;
       this.todos[selectedIndex].labelColor = selectedColorCode;
+    },
+    addNewItem(event, i) {
+      if (event.keyCode === 13) {
+        var rng = window.getSelection().getRangeAt(0);
+        var newTitleToBeAdded =
+          rng.commonAncestorContainer.parentNode.textContent;
+        var newItem = {
+          title: newTitleToBeAdded,
+          showLabelModal: false,
+          showAddActionModal: false,
+          labelColor: ""
+        };
+
+        this.todos.splice(i + 1, 0, newItem);
+      }
     }
   },
   mounted() {
