@@ -240,13 +240,11 @@ export default {
         var rng = window.getSelection().getRangeAt(0);
         var newTitleToBeAdded =
           rng.commonAncestorContainer.parentNode.textContent;
-        this.todos.splice(i, 0, newTitleToBeAdded);
-        this.todos[i + 1] = {
-          title: newTitleToBeAdded.trim(),
-          showLabelModal: false,
-          showAddActionModal: false,
-          labelColor: ""
-        };
+          console.log(rng);
+        var tempObj = this.todos[i];
+        tempObj.title = rng.commonAncestorContainer.parentNode.textContent;
+        this.todos.splice(i.title, 0, newTitleToBeAdded);
+        this.todos[i + 1] = tempObj;
       } else if (event.keyCode === 8) {
         var textToAppend = window.getSelection().getRangeAt(0)
           .commonAncestorContainer.parentNode.textContent;
@@ -256,6 +254,7 @@ export default {
           this.todos.splice(i, 1);
         }
       }
+      console.log(this.todos);
     }
   },
   mounted() {
