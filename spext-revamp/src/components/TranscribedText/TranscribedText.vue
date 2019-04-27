@@ -238,16 +238,14 @@ export default {
     addNewItem(event, i) {
       if (event.keyCode === 13) {
         var rng = window.getSelection().getRangeAt(0);
-        var newTitleToBeAdded =
-          rng.commonAncestorContainer.parentNode.textContent;
-        var newItem = {
+        var newTitleToBeAdded = rng.commonAncestorContainer.parentNode.textContent;
+        this.todos.splice(i, 0, newTitleToBeAdded);
+        this.todos[i + 1] = {
           title: newTitleToBeAdded,
           showLabelModal: false,
           showAddActionModal: false,
           labelColor: ""
         };
-
-        this.todos.splice(i + 1, 0, newItem);
       }
     }
   },
