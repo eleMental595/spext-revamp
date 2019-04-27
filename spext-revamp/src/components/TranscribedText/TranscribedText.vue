@@ -238,14 +238,23 @@ export default {
     addNewItem(event, i) {
       if (event.keyCode === 13) {
         var rng = window.getSelection().getRangeAt(0);
-        var newTitleToBeAdded = rng.commonAncestorContainer.parentNode.textContent;
+        var newTitleToBeAdded =
+          rng.commonAncestorContainer.parentNode.textContent;
         this.todos.splice(i, 0, newTitleToBeAdded);
         this.todos[i + 1] = {
-          title: newTitleToBeAdded,
+          title: newTitleToBeAdded.trim(),
           showLabelModal: false,
           showAddActionModal: false,
           labelColor: ""
         };
+      } else if (event.keyCode === 8) {
+        var textToAppend = window.getSelection().getRangeAt(0)
+          .commonAncestorContainer.parentNode.textContent;
+        if (textToAppend.trim().length === this.todos[i].title.trim().length) {
+          this.todos[i - 1].title =
+            this.todos[i - 1].title + " " + this.todos[i].title;
+          this.todos.splice(i, 1);
+        }
       }
     }
   },
