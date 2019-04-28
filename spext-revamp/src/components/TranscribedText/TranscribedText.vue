@@ -237,34 +237,33 @@ export default {
       this.todos[selectedIndex].labelColor = selectedColorCode;
     },
     addNewItem(event, i) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-
-        var rng = window.getSelection().getRangeAt(0);
-        var newTitleToBeAdded =
-          rng.commonAncestorContainer.parentNode.textContent;
-        var textToBeReplaced =
-          rng.commonAncestorContainer.parentElement.parentElement.firstChild
-            .data;
-        console.log(textToBeReplaced);
-        // var oldItem = {
-        //   title: textToBeReplaced,
-        //   showLabelModal: false,
-        //   showAddActionModal: false,
-        //   labelColor: ""
-        // };
-
-        var newItem = {
-          title: newTitleToBeAdded,
-          showLabelModal: false,
-          showAddActionModal: false,
-          labelColor: ""
-        };
-        this.todos.splice(i + 1, 0, newItem);
-
-        // this.todos.splice(i, 1, oldItem);
-        console.log(this.todos);
-      }
+      // if (event.keyCode === 13) {
+      //   var rng = window.getSelection().getRangeAt(0);
+      //   var newTitleToBeAdded =
+      //     rng.commonAncestorContainer.parentNode.textContent;
+      //   var textToBeReplaced =
+      //     rng.commonAncestorContainer.parentElement.parentElement.firstChild
+      //       .data;
+      // console.log(textToBeReplaced);
+      // var oldItem = {
+      //   title: textToBeReplaced,
+      //   showLabelModal: false,
+      //   showAddActionModal: false,
+      //   labelColor: ""
+      // };
+      // this.todos.splice(i, 1, oldItem);
+      //   var newItem = {
+      //     title: newTitleToBeAdded,
+      //     showLabelModal: false,
+      //     showAddActionModal: false,
+      //     labelColor: ""
+      //   };
+      //   this.todos.splice(i + 1, 0, newItem);
+      // } else if (event.keyCode === 8) {
+      //   var textToBeMerged = window.getSelection().getRangeAt(0)
+      //     .commonAncestorContainer.parentNode.textContent;
+      //   console.log(textToBeMerged);
+      // }
     }
   },
   mounted() {
