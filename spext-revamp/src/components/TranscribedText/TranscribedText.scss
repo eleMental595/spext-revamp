@@ -6,6 +6,8 @@
         padding: 16px;
 
         .todo-wrapper {
+
+
             .transcribe-text-block {
                 display: flex;
                 padding: 0 0 16px 0;
@@ -38,6 +40,7 @@
                     line-height: 2;
 
                     .todo-item {
+                        outline: none;
                         border-radius: 2px;
                         padding: 0px 8px;
                         margin-bottom: 3px;

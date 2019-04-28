@@ -21,7 +21,8 @@ export default {
         { code: "#9c25b1" },
         { code: "#e48130" }
       ],
-      numbers: [1, 2, 3, 4, 5, 6]
+      numbers: [1, 2, 3, 4, 5, 6],
+      text: ""
     };
   },
   //   computed() {
@@ -237,17 +238,32 @@ export default {
     },
     addNewItem(event, i) {
       if (event.keyCode === 13) {
+        event.preventDefault();
+
         var rng = window.getSelection().getRangeAt(0);
         var newTitleToBeAdded =
           rng.commonAncestorContainer.parentNode.textContent;
+        var textToBeReplaced =
+          rng.commonAncestorContainer.parentElement.parentElement.firstChild
+            .data;
+        console.log(textToBeReplaced);
+        // var oldItem = {
+        //   title: textToBeReplaced,
+        //   showLabelModal: false,
+        //   showAddActionModal: false,
+        //   labelColor: ""
+        // };
+
         var newItem = {
           title: newTitleToBeAdded,
           showLabelModal: false,
           showAddActionModal: false,
           labelColor: ""
         };
-
         this.todos.splice(i + 1, 0, newItem);
+
+        // this.todos.splice(i, 1, oldItem);
+        console.log(this.todos);
       }
     }
   },

@@ -20,7 +20,7 @@ export default {
 <style>
 @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
 }
 #app {
