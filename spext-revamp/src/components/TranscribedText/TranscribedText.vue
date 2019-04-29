@@ -237,38 +237,36 @@ export default {
       this.todos[selectedIndex].labelColor = selectedColorCode;
     },
     addNewItem(event, i) {
-      if (event.keyCode === 13) {
-        var rng = window.getSelection().getRangeAt(0);
-        var newTitleToBeAdded =
-          rng.commonAncestorContainer.parentNode.textContent;
-        var textToBeReplaced =
-          rng.commonAncestorContainer.parentElement.parentElement.firstChild
-            .firstChild.data;
-
-        var oldItem = {
-          title: textToBeReplaced,
-          showLabelModal: false,
-          showAddActionModal: false,
-          labelColor: ""
-        };
-        this.todos.splice(i, 1, oldItem);
-        var newItem = {
-          title: newTitleToBeAdded,
-          showLabelModal: false,
-          showAddActionModal: false,
-          labelColor: ""
-        };
-        this.todos.splice(i + 1, 0, newItem);
-        console.log(this.todos);
-      } else if (event.keyCode === 8) {
-        var textToAppend = window.getSelection().getRangeAt(0)
-          .commonAncestorContainer.parentNode.textContent;
-        if (textToAppend.trim().length === this.todos[i].title.trim().length) {
-          this.todos[i - 1].title =
-            this.todos[i - 1].title + " " + this.todos[i].title;
-          this.todos.splice(i, 1);
-        }
-      }
+      // if (event.keyCode === 13) {
+      //   var rng = window.getSelection().getRangeAt(0);
+      //   var newTitleToBeAdded =
+      //     rng.commonAncestorContainer.parentNode.textContent;
+      //   var textToBeReplaced =
+      //     rng.commonAncestorContainer.parentElement.parentElement.firstChild
+      //       .firstChild.data;
+      //   var oldItem = {
+      //     title: textToBeReplaced,
+      //     showLabelModal: false,
+      //     showAddActionModal: false,
+      //     labelColor: ""
+      //   };
+      //   this.todos.splice(i, 1, oldItem);
+      //   var newItem = {
+      //     title: newTitleToBeAdded,
+      //     showLabelModal: false,
+      //     showAddActionModal: false,
+      //     labelColor: ""
+      //   };
+      //   this.todos.splice(i + 1, 0, newItem);
+      // } else if (event.keyCode === 8) {
+      //   var textToAppend = window.getSelection().getRangeAt(0)
+      //     .commonAncestorContainer.parentNode.textContent;
+      //   if (textToAppend.trim().length === this.todos[i].title.trim().length) {
+      //     this.todos[i - 1].title =
+      //       this.todos[i - 1].title + " " + this.todos[i].title;
+      //     this.todos.splice(i, 1);
+      //   }
+      // }
     }
   },
   mounted() {
