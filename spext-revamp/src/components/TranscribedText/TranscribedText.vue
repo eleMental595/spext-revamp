@@ -150,6 +150,10 @@ export default {
       }
     },
     dragEnd(ev) {
+       document.getElementById("label" + this.dragging).style.display = "block";
+      document.getElementById("add" + this.dragging).style.display = "block";
+      document.getElementById("drag" + this.dragging).style.opacity = "1";
+
       this.dragging = -1;
       var todoItems = document.getElementsByClassName("todo-wrapper");
       for (let i = 0; i < todoItems.length; i++) {
