@@ -247,15 +247,14 @@ export default {
       //     rng.commonAncestorContainer.parentNode.textContent;
       //   var textToBeReplaced =
       //     rng.commonAncestorContainer.parentElement.parentElement.firstChild
-      //       .data;
-      // console.log(textToBeReplaced);
-      // var oldItem = {
-      //   title: textToBeReplaced,
-      //   showLabelModal: false,
-      //   showAddActionModal: false,
-      //   labelColor: ""
-      // };
-      // this.todos.splice(i, 1, oldItem);
+      //       .firstChild.data;
+      //   var oldItem = {
+      //     title: textToBeReplaced,
+      //     showLabelModal: false,
+      //     showAddActionModal: false,
+      //     labelColor: ""
+      //   };
+      //   this.todos.splice(i, 1, oldItem);
       //   var newItem = {
       //     title: newTitleToBeAdded,
       //     showLabelModal: false,
@@ -264,9 +263,13 @@ export default {
       //   };
       //   this.todos.splice(i + 1, 0, newItem);
       // } else if (event.keyCode === 8) {
-      //   var textToBeMerged = window.getSelection().getRangeAt(0)
+      //   var textToAppend = window.getSelection().getRangeAt(0)
       //     .commonAncestorContainer.parentNode.textContent;
-      //   console.log(textToBeMerged);
+      //   if (textToAppend.trim().length === this.todos[i].title.trim().length) {
+      //     this.todos[i - 1].title =
+      //       this.todos[i - 1].title + " " + this.todos[i].title;
+      //     this.todos.splice(i, 1);
+      //   }
       // }
     }
   },

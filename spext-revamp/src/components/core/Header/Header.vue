@@ -1,17 +1,22 @@
 <template src="./Header.html"></template>
 
 <script>
+import Popover from "./../Popover/Popover";
 export default {
+  config: {},
   data() {
-    return {
-      showMenu: false,
+    return (this.config = {
+      show: false,
       leftPos: "",
       topPos: ""
-    };
+    });
+  },
+  components: {
+    Popover
   },
   methods: {
     openTranscript(event) {
-      this.showMenu = !this.showMenu;
+      this.show = !this.show;
       this.leftPos = this.$refs.editTranscript.offsetLeft + "px";
       this.topPos = this.$refs.navbar.offsetHeight - 8 + "px";
     }
