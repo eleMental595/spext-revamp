@@ -8,13 +8,13 @@
   .add-files-content {
     display: flex;
     .action-list {
-      width: max-content;
+      width: 25%;
       border-right: 1px solid #dee1e8;
       height: 360px;
       overflow-y: scroll;
 
       .action-item {
-        padding: 24px 32px;
+        padding: 24px 16px 24px 32px;
         border-bottom: 1px solid #dee1e8;
 
         font-size: 18px;
@@ -33,6 +33,7 @@
       }
     }
     .action-content {
+      width: 75%;
     }
   }
   .add-files-footer {

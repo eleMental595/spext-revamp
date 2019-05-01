@@ -1,8 +1,19 @@
 <template src="./SpextDocs.html"></template>
-<!--<style src="./SpextDocs.scss">-->
+<style lang="scss" src="./SpextDocs.scss">
 </style>
 <script>
 export default {
-  name: "SpecsDocs"
+  name: "SpecsDocs",
+  data(){
+    return{
+      filename:"",
+      files:[{
+    title:"File Title 1"
+  },{
+    title:"File Title 2"
+  }]
+    }
+  }
+  
 };
 </script>

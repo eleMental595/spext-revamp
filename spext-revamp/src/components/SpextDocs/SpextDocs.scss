@@ -1,0 +1,56 @@
+.spext-docs-container {
+  .search-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #f6f6f6;
+    .sub-container {
+      border: 1px solid #e5e5e5;
+      display: flex;
+      padding: 4px 8px;
+      border-radius: 32px;
+      i {
+        color: #dee1e8;
+      }
+      .input-cotainer {
+        padding: 0 60px 0 8px;
+        input[type="text"] {
+          border: none;
+          color: #dee1e8;
+          outline: none;
+          width: 300px;
+        }
+      }
+    }
+
+    ::placeholder {
+      color: #dee1e8;
+      font-size: 16px;
+      opacity: 0.6;
+    }
+  }
+
+  .file-results-container {
+    .file {
+      display: flex;
+      padding: 16px 16px 16px 32px;
+      align-items: center;
+      border-bottom: 1px solid #f6f6f6;
+      cursor: pointer;
+      .icon-container {
+        i {
+          color: #dee1e8;
+          font-size: 32px;
+        }
+      }
+      .file-name {
+        color: #324851;
+        padding-left: 24px;
+        font-weight: bold;
+      }
+      &:hover {
+        background-color: #f6f6f6;
+      }
+    }
+  }
+}

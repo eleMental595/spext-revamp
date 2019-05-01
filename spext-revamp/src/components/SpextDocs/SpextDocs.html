@@ -1,3 +1,21 @@
-<div>
-  spextdocs
+<div class="spext-docs-container">
+  <div class="search-container">
+    <div class="sub-container">
+      <div><i class="fas fa-search"></i></div>
+      <div class="input-cotainer">
+        <input type="text" v-model="filename" placeholder="Search files" />
+      </div>
+    </div>
+  </div>
+
+  <div class="file-results-container">
+    <div class="file" v-for="file in files">
+      <div class="icon-container">
+        <i class="fas fa-file"></i>
+      </div>
+      <div class="file-name">
+        {{ file.title }}
+      </div>
+    </div>
+  </div>
 </div>
