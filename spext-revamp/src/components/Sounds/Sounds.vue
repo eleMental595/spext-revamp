@@ -10,5 +10,5 @@ export default {
 };
 </script>
 
-<style src="./Sounds.css">
+<style src="./Sounds.scss" lang="scss">
 </style>

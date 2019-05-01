@@ -37,6 +37,6 @@ export default {
 };
 </script>
 
-<style src="./MusicLibrary.css" scoped>
+<style src="./MusicLibrary.css" scoped lang="css">
 @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 </style>
