@@ -7,6 +7,7 @@ export default {
   data() {
     return (this.config = {
       show: false,
+      width: "275px",
       leftPos: "",
       topPos: ""
     });

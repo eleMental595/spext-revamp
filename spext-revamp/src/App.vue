@@ -2,17 +2,20 @@
   <div id="app">
     <Header/>
     <TranscribedText></TranscribedText>
+    <!-- <Sounds></Sounds> -->
   </div>
 </template>
 
 <script>
 import Header from "./components/core/Header/Header.vue";
 import TranscribedText from "./components/TranscribedText/TranscribedText";
+// import Sounds from "./components/Sounds/Sounds";
 export default {
   name: "app",
   components: {
     TranscribedText,
     Header
+    // Sounds
   }
 };
 </script>
