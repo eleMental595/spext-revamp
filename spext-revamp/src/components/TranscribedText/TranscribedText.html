@@ -6,8 +6,8 @@
                 <div class="transcribe-text-block">
                     <div class="handle-container" contenteditable="false">
                         <div class="icon label-icon " v-bind:style="{color:item.labelColor}" v-bind:id="'label'+ i"
-                            v-on:click="displayLabelPopover(i)" v-bind:class="{'active-icon':item.showLabelModal}">
-                            <i v-tooltip.left="'Label'" class="fa fa-tag"></i>
+                             v-bind:class="{'active-icon':item.showLabelModal}">
+                            <i v-tooltip.left="'Label'" v-on:click="displayLabelPopover(i)"class="fa fa-tag"></i>
                         </div>
 
                         <div v-if="item.showLabelModal" v-bind:id="'label-modal' + i">
@@ -36,8 +36,8 @@
                         </div>
                         <div class="icon add-icon " v-bind:id="'add'+ i "
                             v-bind:class="{'active-icon':item.showAddActionModal}"
-                            v-on:click="displayAddActionPopover(i)">
-                            <i v-tooltip.bottom-end="'Click to add'" class="fa fa-plus-circle"></i>
+                            >
+                            <i v-tooltip.bottom-end="'Click to add'" v-on:click="displayAddActionPopover(i)"class="fa fa-plus-circle"></i>
                         </div>
 
                         <div v-if="item.showAddActionModal" v-bind:id="'add-action-modal' + i">
