@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <!-- <HelloWorld></HelloWorld> -->
+    <Header/>
+    <!-- <TranscribedText></TranscribedText> -->
+    <!-- <Sounds></Sounds> -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Header from "./components/core/Header/Header.vue";
+import TranscribedText from "./components/TranscribedText/TranscribedText";
+// import Sounds from "./components/Sounds/Sounds";
 export default {
   name: "app",
   components: {
-    HelloWorld,
+    TranscribedText,
     Header
+    // Sounds
   }
 };
 </script>

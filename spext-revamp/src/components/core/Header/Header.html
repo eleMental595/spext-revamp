@@ -5,19 +5,18 @@
                 <i class="fa fa-chevron-left"></i>
             </div>
             <div class="audio-description">
-                <span class="bold">Zoom_wav.mp3</span>
-                <span>Shared with Jogn Doe & 15 others</span>
+                <span>Zoom_wav.mp3</span>
+                <span class="desc">Shared with Jogn Doe & 15 others</span>
             </div>
         </div>
         <div class="menu-middle anchor"
             v-bind:class="{
-            'menu-active': showMenu }" @click="openTranscript"
+            'menu-active': show }" @click="openTranscript"
             ref="editTranscript">
             <i class="fa fa-h-square"></i>
-            <span>Edit Transcript</span>
+            <span>Transcript Mode</span>
             <i class="fa fa-chevron-down"></i>
-            <div v-if="showMenu" v-bind:style="{ left: leftPos, top:
-                topPos }" class="menu" id="menu">
+            <Popover :config="config">
                 <div class="menu-item">
                     <div class="menu-list">
                         <div class="menu-icon">
@@ -49,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </Popover>
         </div>
 
         <div class="sub-menu">
