@@ -1,0 +1,26 @@
+<div class="add-files-container">
+  <div class="add-files-content">
+    <div class="action-list">
+      <div v-for="(action,i) in actionList" class="action-item" v-bind:key="i">
+        <router-link :to="action.path">{{ action.label }}</router-link>
+      </div>
+    </div>
+    <div class="action-content">
+      <router-view></router-view>
+    </div>
+  </div>
+  <div class="add-files-footer">
+    <div class="message">
+      Uploaded files wont be transcribed here.To transcribe files,use the
+      "Transcribe" button in the top bar
+    </div>
+    <div class="btn-container">
+      <div class="btn-wrapper">
+        <button class="btn cancel-btn">Cancel</button>
+      </div>
+      <div class="btn-wrapper add-file-btn-wrapper">
+        <button class="btn add-file-btn">Add File</button>
+      </div>
+    </div>
+  </div>
+</div>
