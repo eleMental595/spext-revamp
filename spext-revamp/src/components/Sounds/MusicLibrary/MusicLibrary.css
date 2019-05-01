@@ -1,0 +1,107 @@
+.music-library {
+    padding: 16px;
+}
+
+.music-library .search-wrapper .search {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid #c2c2c2;
+    padding: 12px;
+    border-radius: 30px;
+    text-align: left;
+}
+
+.music-library .search-wrapper .search .fa-search {
+    padding: 6px;
+    font-size: 22px;
+    color: #c2c2c2;
+}
+
+.music-library .search-wrapper .search input[type="text"] {
+    color: #c2c2c2;
+    border: none;
+    font-size: 22px;
+    width: calc(100% - 35px);
+}
+
+:focus {
+    outline: none;
+}
+
+/* Input Placeholder styles */
+
+.music-library .search-wrapper .search input[type="text"]::-webkit-input-placeholder {
+    color: #c2c2c2;
+}
+
+.music-library .search-wrapper .search input[type="text"]::-moz-placeholder {
+    color: #c2c2c2;
+}
+
+.music-library .search-wrapper .search input[type="text"]:-ms-input-placeholder {
+    color: #c2c2c2;
+}
+
+.music-library .search-wrapper .search input[type="text"]::placeholder {
+    color: #c2c2c2;
+}
+
+/* Music library css */
+
+.music-library .library-menu {
+    width: 70%;
+    margin: 16px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.music-library .library-menu .menu-item {
+    padding: 12px 42px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #324851;
+    cursor: pointer;
+}
+
+.music-library .library-menu .selected {
+    background: #f6f6f6;
+}
+
+/* Result section */
+
+.results {
+    text-align: left;
+    /* width: 70%; */
+    margin: 0 auto;
+}
+
+.results ul {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    list-style: disc;
+    line-height: 1em;
+}
+
+.results ul li {
+    list-style: none;
+    width: 45%;
+    padding: 16px 6px;
+    margin: 6px;
+    font-size: 18px;
+    border-bottom: 1px solid #f6f6f6;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.results .result-list .item .icon {
+    padding: 16px;
+}
+
+.results .result-list .selected-audio {
+    background: #f6f6f6;
+}
