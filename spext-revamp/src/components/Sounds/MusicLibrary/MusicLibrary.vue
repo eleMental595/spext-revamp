@@ -25,7 +25,7 @@ export default {
       ]),
       (this.selectedAudio = this.results[0].text);
   },
-  methods: {
+  watch: {
     changeOption(ev) {
       this.selectedMenu = ev.value;
       console.log(this.selectedMenu);

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <TranscribedText></TranscribedText>
+    <!-- <TranscribedText></TranscribedText> -->
     <!-- <Sounds></Sounds> -->
     <router-view></router-view>
   </div>

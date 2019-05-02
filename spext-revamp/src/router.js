@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import TranscribedText from "./components/TranscribedText/TranscribedText";
 import AddFiles from "./components/AddFiles/AddFiles";
 import SpextDocs from "./components/SpextDocs/SpextDocs";
 import Sounds from "./components/Sounds/Sounds";
@@ -12,10 +13,20 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
+      path: "/",
+      name: "TranscribedText",
+      component: TranscribedText
+    },
+    {
       path: "/addfile",
       name: "addfile",
       component: AddFiles,
       children: [
+        {
+          path: "/",
+          name: "spextdocs",
+          component: SpextDocs
+        },
         {
           path: "spextdocs",
           name: "spextdocs",
@@ -27,8 +38,13 @@ const router = new VueRouter({
           component: Sounds,
           children: [
             {
-              path: "musiclibrary",
+              path: "",
               name: "musiclibrary",
+              component: MusicLibrary
+            },
+            {
+              path: "musiclibrary",
+              name: "MusicLibrary",
               component: MusicLibrary
             },
             {
