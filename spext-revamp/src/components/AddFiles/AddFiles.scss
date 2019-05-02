@@ -14,21 +14,29 @@
       overflow-y: scroll;
 
       .action-item {
-        padding: 24px 16px 24px 32px;
         border-bottom: 1px solid #dee1e8;
-
         font-size: 18px;
         a {
           cursor: pointer;
           color: #65757d;
           text-decoration: none;
         }
+      }
+      .router-menu-item {
+        padding: 24px 16px 24px 32px;
         &:hover {
           font-weight: bold;
           background-color: #1899f7;
           a {
             color: white;
           }
+        }
+      }
+      .router-link-exact-active {
+        font-weight: bold;
+        background-color: #1899f7;
+        a {
+          color: white;
         }
       }
     }

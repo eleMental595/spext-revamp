@@ -2,7 +2,9 @@
   <div class="add-files-content">
     <div class="action-list">
       <div v-for="(action,i) in actionList" class="action-item" v-bind:key="i">
-        <router-link :to="action.path">{{ action.label }}</router-link>
+        <router-link tag="div" class="router-menu-item" :to="action.path"
+          ><a> {{ action.label }}</a>
+        </router-link>
       </div>
     </div>
     <div class="action-content">
