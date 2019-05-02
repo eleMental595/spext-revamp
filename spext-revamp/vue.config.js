@@ -1,3 +1,3 @@
-module.exports = {
-    publicPath: 'eleMental595.gihub.io/'
-   } 
+// module.exports = {
+//   publicPath: "spext-revamp/"
+// };

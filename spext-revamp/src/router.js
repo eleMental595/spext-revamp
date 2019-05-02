@@ -32,7 +32,7 @@ const router = new VueRouter({
               component: MusicLibrary
             },
             {
-              path: "/media",
+              path: "media",
               name: "media",
               component: Media
             }
