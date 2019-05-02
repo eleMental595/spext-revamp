@@ -1,8 +1,14 @@
 <template src="./Sounds.html"></template>
-<!--<style src="./Sounds.scss">-->
-</style>
+
 <script>
+import MusicLibrary from "./MusicLibrary/MusicLibrary";
 export default {
-  name: "Sounds"
+  name: "Sounds",
+  components: {
+    MusicLibrary
+  }
 };
 </script>
+
+<style src="./Sounds.scss" lang="scss">
+</style>
