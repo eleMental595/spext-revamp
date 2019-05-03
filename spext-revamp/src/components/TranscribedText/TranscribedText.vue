@@ -35,7 +35,7 @@ export default {
         show: false,
         showFullScreen: true,
         style: {
-          width: "1000px",
+          width: "900px",
           margin: "auto",
           "max-height": "800px"
         }
