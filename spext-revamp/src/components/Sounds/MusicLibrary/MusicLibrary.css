@@ -5,23 +5,37 @@
 .music-library .search-wrapper .search {
     width: 70%;
     margin: 0 auto;
-    border: 1px solid #c2c2c2;
-    padding: 6px 12px;
-    border-radius: 30px;
-    text-align: left;
+    /* border: 1px solid #c2c2c2; */
+    /* padding: 6px 12px; */
+    /* border-radius: 30px; */
+    /* text-align: left; */
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 25px;
 }
 
 .music-library .search-wrapper .search .fa-search {
-    padding: 6px;
-    font-size: 22px;
-    color: #c2c2c2;
+    padding: 12px;
+    /* font-family: FontAwesome; */
+    font-style: normal;
+    /* font-weight: normal; */
+    font-size: 16px;
+    line-height: 18px;
+    color: #C2C2C2;
 }
 
 .music-library .search-wrapper .search input[type="text"] {
-    color: #c2c2c2;
+    /* color: #c2c2c2; */
     border: none;
-    font-size: 22px;
-    width: calc(100% - 35px);
+    /* font-size: 22px; */
+    width: calc(100% - 60px);
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    /* display: flex; */
+    /* align-items: center; */
 }
 
 :focus {
@@ -57,16 +71,25 @@
 }
 
 .music-library .library-menu .menu-item {
-    /* padding: 12px 42px; */
-    font-size: 18px;
+    padding: 12px 32px;
+    /* font-size: 18px;
     font-weight: bold;
     color: #324851;
     cursor: pointer;
-    padding: 12px 22px;
+    padding: 12px 22px; */
+    font-family: Quicksand;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #324851;
 }
 
 .music-library .library-menu .selected {
     background: #f6f6f6;
+    font-weight: bolder;
+    border-radius: 9px;
 }
 
 /* Result section */
@@ -93,15 +116,25 @@
 }
 
 .results ul li {
-    list-style: none;
-    width: 45%;
-    padding: 16px 6px;
-    margin: 6px;
-    font-size: 18px;
-    border-bottom: 1px solid #f6f6f6;
+    /* list-style: none; */
+    /* width: 45%; */
+    width: calc((100% / 2) - 12px);
+    /* padding: 16px 6px; */
+    /* margin: 6px; */
+    /* font-size: 18px; */
+    /* border-bottom: 1px solid #f6f6f6; */
+    /* font-weight: bold; */
+    /* cursor: pointer; */
+    /* color: #324851; */
+    font-family: Quicksand;
+    font-style: normal;
     font-weight: bold;
-    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
     color: #324851;
+    border-bottom: 1px solid #F3F3F3;
 }
 
 .results .result-list .item .icon {
@@ -109,5 +142,6 @@
 }
 
 .results .result-list .selected-audio {
-    background: #f6f6f6;
+    background: #F6F6F6;
+    border-radius: 9px;
 }
