@@ -1,0 +1,42 @@
+.upload-media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .bold {
+    font-weight: bold;
+  }
+  .header {
+    padding: 24px 0;
+  }
+  .title {
+    padding: 32px 0 16px 0;
+  }
+  input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #c2c2c2;
+    outline: none;
+  }
+  .upload-media-input {
+    input[type="text"] {
+      padding: 0px 80px;
+      width: 320px;
+    }
+  }
+  .title-input {
+    input[type="text"] {
+      padding: 0 6px;
+    }
+  }
+  .btn-container {
+    padding: 24px 0;
+    .upload-btn {
+      padding: 8px 32px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: none;
+      background: #1899f7;
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+}

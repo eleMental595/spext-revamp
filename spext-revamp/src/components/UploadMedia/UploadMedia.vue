@@ -1,5 +1,5 @@
 <template src="./UploadMedia.html"></template>
- <!--<style src="./UploadMedia.scss"></style>-->
+<style lang="scss" src="./UploadMedia.scss"></style>
 <script>
 export default {
   name: "UploadMedia"
