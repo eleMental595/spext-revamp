@@ -1,73 +1,75 @@
 <div class="navbar" ref="navbar">
-    <nav>
-        <div class="nav-right-wrapper">
-            <div class="arrow-back">
-                <i class="fa fa-chevron-left"></i>
+  <nav>
+    <div class="nav-right-wrapper">
+      <div class="arrow-back">
+        <i class="fa fa-chevron-left"></i>
+      </div>
+      <div class="audio-description">
+        <span>Zoom_wav.mp3</span>
+        <span class="desc">Shared with Jogn Doe & 15 others</span>
+      </div>
+    </div>
+    <div
+      class="menu-middle anchor"
+      v-bind:class="{
+            'menu-active': show }"
+      @click="openTranscript"
+      ref="editTranscript"
+    >
+      <i class="fa fa-h-square" style="margin-right: 8px;"></i>
+      <span>Transcript Mode</span>
+      <i class="fa fa-chevron-down" style="margin-left: 8px;"></i>
+      <Popover :config="config">
+        <div class="menu-item">
+          <div class="menu-list">
+            <div class="menu-icon">
+              <i class="fa fa-volume-up"></i>
             </div>
-            <div class="audio-description">
-                <span class="bold">Zoom_wav.mp3</span>
-                <span>Shared with Jogn Doe & 15 others</span>
+            <div class="menu-element">
+              <span class="bold">Edit Media</span>
+              <span>Shows filter words, silence etc</span>
             </div>
+          </div>
+          <div class="menu-list">
+            <div class="menu-icon">
+              <i class="fa fa-ellipsis-v"></i>
+              <i class="fa fa-ellipsis-v"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+            <div class="menu-element">
+              <span class="bold">Storyboard</span>
+              <span>visualize the transcript as a grid</span>
+            </div>
+          </div>
+          <div class="menu-list">
+            <div class="menu-icon">
+              <i class="fa fa-volume-up"></i>
+            </div>
+            <div class="menu-element">
+              <span class="bold">Edit Transcript</span>
+              <span>Correct the transcript for errors</span>
+            </div>
+          </div>
         </div>
-        <div class="menu-middle anchor"
-            v-bind:class="{
-            'menu-active': showMenu }" @click="openTranscript"
-            ref="editTranscript">
-            <i class="fa fa-h-square"></i>
-            <span>Edit Transcript</span>
-            <i class="fa fa-chevron-down"></i>
-            <div v-if="showMenu" v-bind:style="{ left: leftPos, top:
-                topPos }" class="menu" id="menu">
-                <div class="menu-item">
-                    <div class="menu-list">
-                        <div class="menu-icon">
-                            <i class="fa fa-volume-up"></i>
-                        </div>
-                        <div class="menu-element">
-                            <span class="bold">Edit Media</span>
-                            <span>Shows filter words, silence etc</span>
-                        </div>
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-icon">
-                            <i class="fa fa-ellipsis-v"></i>
-                            <i class="fa fa-ellipsis-v"></i>
-                            <i class="fa fa-ellipsis-v"></i>
-                        </div>
-                        <div class="menu-element">
-                            <span class="bold">Storyboard</span>
-                            <span>visualize the transcript as a grid</span>
-                        </div>
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-icon">
-                            <i class="fa fa-volume-up"></i>
-                        </div>
-                        <div class="menu-element">
-                            <span class="bold">Edit Transcript</span>
-                            <span>Correct the transcript for errors</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </Popover>
+    </div>
 
-        <div class="sub-menu">
-            <div class="sub-menu-left">
-                <button class="btn-share">Share</button>
-                <span>
-                    Export
-                    <i class="fa fa-chevron-down"></i>
-                </span>
-                <i class="fa fa-search"></i>
-                <i class="fa fa-link"></i>
-                <i class="fa fa-link"></i>
-                <i class="fa fa-ellipsis-h"></i>
-            </div>
-            <div class="sub-menu-right">
-                <i class="fa fa-question-circle"></i>
-                <i class="fa fa-bell"></i>
-            </div>
-        </div>
-    </nav>
+    <div class="sub-menu">
+      <div class="sub-menu-left">
+        <button class="btn-share">Share</button>
+        <span>
+          Export
+          <i class="fa fa-chevron-down"></i>
+        </span>
+        <i class="fa fa-search"></i>
+        <i class="fa fa-link"></i>
+        <i class="fa fa-link"></i>
+        <i class="fa fa-ellipsis-h"></i>
+      </div>
+      <div class="sub-menu-right">
+        <i class="fa fa-question-circle"></i>
+        <i class="fa fa-bell"></i>
+      </div>
+    </div>
+  </nav>
 </div>
