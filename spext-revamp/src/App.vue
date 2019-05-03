@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <!-- <TranscribedText></TranscribedText> -->
+    <TranscribedText></TranscribedText>
     <!-- <Sounds></Sounds> -->
     <router-view></router-view>
   </div>
@@ -10,13 +10,13 @@
 <script>
 import Header from "./components/core/Header/Header.vue";
 import TranscribedText from "./components/TranscribedText/TranscribedText";
-// import Sounds from "./components/Sounds/Sounds";
+import Sounds from "./components/Sounds/Sounds";
 export default {
   name: "app",
   components: {
     TranscribedText,
-    Header
-    // Sounds
+    Header,
+    Sounds
   }
 };
 </script>
@@ -26,6 +26,14 @@ export default {
 body {
   /* overflow: hidden; */
   margin: 0;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./assets/fonts/Quicksand/Quicksand-Light.ttf");
+}
+@font-face {
+  font-family: "Muli";
+  src: url("./assets/fonts/Muli/Muli-Regular.ttf");
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
