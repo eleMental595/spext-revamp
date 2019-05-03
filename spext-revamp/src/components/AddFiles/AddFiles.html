@@ -1,14 +1,28 @@
 <div class="add-files-container">
   <div class="add-files-content">
     <div class="action-list">
-      <div v-for="(action,i) in actionList" class="action-item" v-bind:key="i">
-        <router-link tag="div" class="router-menu-item" :to="action.path"
-          ><a> {{ action.label }}</a>
-        </router-link>
+      <div
+        v-for="(action,i) in actionList"
+        class="action-item"
+        v-bind:key="i"
+        @click="changeView(action,i)"
+        :class="selectedOption === action.name ? 'selected': ''"
+      >
+        {{ action.label }}
+        <!-- <router-link :to="action.path">{{ action.label }}</router-link> -->
       </div>
     </div>
     <div class="action-content">
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <div v-if="selectedOption === 'spextdocs'">
+        <SpecsDocs></SpecsDocs>
+      </div>
+      <div v-else-if="selectedOption === 'sounds'">
+        <Sounds></Sounds>
+      </div>
+      <div v-else-if="selectedOption === 'uploadmedia'">
+        <UploadMedia></UploadMedia>
+      </div>
     </div>
   </div>
   <div class="add-files-footer">

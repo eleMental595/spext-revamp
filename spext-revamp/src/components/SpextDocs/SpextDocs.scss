@@ -1,4 +1,6 @@
 .spext-docs-container {
+  font-family: "Quicksand";
+
   .search-container {
     display: flex;
     justify-content: center;
@@ -47,6 +49,8 @@
         color: #324851;
         padding-left: 24px;
         font-weight: bold;
+        font-size: 16px;
+        font-family: "QuicksandBold";
       }
       &:hover {
         background-color: #f6f6f6;

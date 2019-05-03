@@ -10,13 +10,13 @@
 <script>
 import Header from "./components/core/Header/Header.vue";
 import TranscribedText from "./components/TranscribedText/TranscribedText";
-import Sounds from "./components/Sounds/Sounds";
+// import Sounds from "./components/Sounds/Sounds";
 export default {
   name: "app",
   components: {
     TranscribedText,
-    Header,
-    Sounds
+    Header
+    // Sounds
   }
 };
 </script>
@@ -30,6 +30,10 @@ body {
 @font-face {
   font-family: "Quicksand";
   src: url("./assets/fonts/Quicksand/Quicksand-Light.ttf");
+}
+@font-face {
+  font-family: "QuicksandBold";
+  src: url("./assets/fonts/Quicksand/Quicksand-Bold.ttf");
 }
 @font-face {
   font-family: "Muli";

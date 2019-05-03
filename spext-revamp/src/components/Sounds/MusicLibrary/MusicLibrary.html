@@ -1,24 +1,31 @@
 <div class="music-library" id="musicLibrary">
-    <div class="search-wrapper">
-        <div class="search">
-            <i class="fa fa-search"></i>
-            <input type="text" placeholder="Search Files">
-        </div>
+  <div class="search-wrapper">
+    <div class="search">
+      <i class="fa fa-search"></i>
+      <input type="text" placeholder="Search Files" />
     </div>
-    <div class="library-menu">
-        <div v-for="menu in menus" class="menu-item"
-            @click="changeOption(menu)" v-bind:class="{'selected' :
-            selectedMenu === menu.value }">
-            {{menu.label}}
-        </div>
+  </div>
+  <div class="library-menu">
+    <div
+      v-for="menu in menus"
+      class="menu-item"
+      @click="changeOption(menu)"
+      :class="{'selected' : selectedMenu === menu.value }"
+    >
+      {{ menu.label }}
     </div>
-    <div class="results">
-        <ul class="result-list">
-            <li v-for="item in results" class="item" @click="changeAudio(item)"
-                v-bind:class="{'selected-audio' :selectedAudio === item.text}">
-                <span class="icon"><i v-bind:class="item.icon"></i></span>
-                <span>{{item.text}}</span>
-            </li>
-        </ul>
-    </div>
+  </div>
+  <div class="results">
+    <ul class="result-list">
+      <li
+        v-for="item in results"
+        class="item"
+        @click="changeAudio(item)"
+        v-bind:class="{'selected-audio' :selectedAudio === item.text}"
+      >
+        <span class="icon"><i v-bind:class="item.icon"></i></span>
+        <span>{{ item.text }}</span>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     documentClick(event) {
-      if (event.target.className === "overlay") {
+      if (event.target.classList[0] === "overlay") {
         this.config.show = false;
       }
     }
