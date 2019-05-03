@@ -6,21 +6,38 @@
     flex-direction: column;
 
     .sound-nav {
-        border-bottom: 1px solid #c2c2c2;
+        border: 1px solid #F3F3F3;
         display: flex;
         justify-content: center;
 
         .selected {
-            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            font-family: 'QuicksandBold' !important;
+            align-items: center;
 
-            border-bottom: 2px solid #324851;
+            .mar-b-10 {
+                margin-bottom: 10px;
+            }
+
+            .underline {
+                // border: 2px solid #324851;
+                border: 1.5px solid #324851;
+                width: 70px;
+            }
         }
 
         .sound-option {
             text-decoration: none;
             margin: 0 6px;
-            padding: 16px 32px;
+            padding: 10px 32px 0;
             color: #324851;
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 17px;
 
         }
     }
