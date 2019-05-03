@@ -200,6 +200,7 @@ export default {
 
       document.getElementById("add" + to).classList.remove("active-icon");
       document.getElementById("label" + to).classList.remove("active-icon");
+      this.todos[this.dragging].showHorizontalLine = false;
       this.moveItem(this.dragging, to);
       this.todos[to]["dragging"] = false;
       // ev.target.style.marginTop = "2px";
@@ -296,6 +297,19 @@ export default {
       if (type === "addFile") {
         this.config.show = true;
       }
+    },
+    displayIcons(i) {
+      document
+        .getElementById("handle-container" + i)
+        .classList.add("active-handle-container");
+    },
+    hideIcons(i) {
+      document
+        .getElementById("handle-container" + i)
+        .classList.remove("active-handle-container");
+      document
+        .getElementById("todo-item" + i)
+        .classList.remove("active-todo-wrapper");
     }
   },
   mounted() {
