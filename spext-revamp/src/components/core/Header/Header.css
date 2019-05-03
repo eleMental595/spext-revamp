@@ -6,8 +6,7 @@
   padding: 12px 32px;
   font-size: 1rem;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff;
 }
 
@@ -22,8 +21,7 @@
 .menu-item {
   color: #212529;
   /* padding: 0.25rem 1.5rem; */
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .direction-column {
@@ -57,7 +55,6 @@
 }
 
 nav {
-  font-family: "Quicksand";
   background-color: #324851;
   color: #ffffff;
   display: flex;
@@ -65,7 +62,7 @@ nav {
   align-items: center;
   padding: 16px;
   cursor: pointer;
-  height: 45px;
+  /* height: 45px; */
 }
 
 nav .sub-menu {
@@ -78,9 +75,11 @@ nav .menu-middle {
   /* justify-content: space-between; */
   align-items: center;
 }
+
 .menu-middle span {
   font-weight: bold;
 }
+
 nav .nav-right-wrapper .arrow-back {
   padding-right: 16px;
 }
@@ -133,6 +132,7 @@ nav .sub-menu-right {
   width: 46px;
   padding-left: 16px;
 }
+
 .sub-menu-left span {
   font-weight: bold;
 }

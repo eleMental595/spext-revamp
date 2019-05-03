@@ -1,10 +1,15 @@
 <div id="sounds">
   <div class="sound-nav">
-<router-link to="media" exact-active-class="exact-active">Your Media</router-link>
-<router-link to="musiclibrary" exact-active-class="exact-active">Music Library</router-link>
+      <div :class="selectedSoundOption === 'yourMedia' ? 'selected': ''" class="sound-option" @click="toggle('yourMedia')">Your Media</div>
+      <div :class="selectedSoundOption === 'musicLibrary' ? 'selected': ''" class="sound-option" @click="toggle('musicLibrary')">Music Library</div>
   </div>
     <div class="content">
-    <router-view></router-view>
+    <div v-if="selectedSoundOption === 'yourMedia'">
+      <YourMedia></YourMedia>
+    </div>
+    <div v-if="selectedSoundOption === 'musicLibrary'">
+      <MusicLibrary></MusicLibrary>
+    </div>
     </div>
 </div>
 </router-view>

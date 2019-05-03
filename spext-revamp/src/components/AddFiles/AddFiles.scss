@@ -1,10 +1,7 @@
 .add-files-container {
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    width: 75%;
-    margin: 64px auto;
-    -webkit-box-shadow: 0px 5px 4px 0px rgba(189, 189, 189, 1);
-    box-shadow: 0px 5px 4px 0px rgba(189, 189, 189, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .add-files-content {
         display: flex;
@@ -12,9 +9,15 @@
         .action-list {
             width: max-content;
             border-right: 1px solid #dee1e8;
-            height: 360px;
             overflow-y: scroll;
             width: 25%;
+            height: 375px;
+
+            .selected {
+                background: #1899f7;
+                color: #ffffff;
+                font-weight: bold;
+            }
 
             .action-item {
                 padding: 24px 32px;
@@ -31,6 +34,7 @@
                 &:hover {
                     font-weight: bold;
                     background-color: #1899f7;
+                    color: #ffffff;
 
                     a {
                         color: white;
@@ -64,6 +68,7 @@
         align-items: center;
         display: flex;
         font-size: 14px;
+        height: 35px;
         border-top: 1px solid #dee1e8;
         justify-content: space-between;
         padding: 16px 32px 16px 16px;

@@ -1,3 +1,9 @@
+.full-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .overlay {
     position: fixed;
     /* display: none; */
