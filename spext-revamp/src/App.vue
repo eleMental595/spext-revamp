@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <!-- <TranscribedText></TranscribedText> -->
+    <TranscribedText></TranscribedText>
     <!-- <Sounds></Sounds> -->
     <router-view></router-view>
   </div>
@@ -30,6 +30,10 @@ body {
 @font-face {
   font-family: "Quicksand";
   src: url("./assets/fonts/Quicksand/Quicksand-Light.ttf");
+}
+@font-face {
+  font-family: "QuicksandBold";
+  src: url("./assets/fonts/Quicksand/Quicksand-Bold.ttf");
 }
 @font-face {
   font-family: "Muli";
