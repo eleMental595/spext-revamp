@@ -37,10 +37,6 @@ export default {
         top: this.$refs.navbar.offsetHeight - 8 + "px"
       };
       this.$set(this.config, "style", style);
-      // this.config.style.leftPos =
-      // this.config.style.topPos = this.$refs.navbar.offsetHeight - 8 + "px";
-      // this.config.style = Object.assign({}, this.config.style);
-      // console.log(this.config);
     }
   }
 };
