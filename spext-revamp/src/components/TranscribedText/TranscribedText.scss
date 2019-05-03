@@ -1,6 +1,9 @@
 .transcribe-text-container {
+    font-family: "Muli";
+    font-size: 16px;
+
     .todo-list {
-        width: 75%;
+        width: 65%;
         margin: 0 auto;
         // border: 1px solid lightgray;
         padding: 16px;
@@ -14,20 +17,29 @@
 
                 .handle-container {
                     display: flex;
+                    height: max-content;
+                    align-items: center;
+                    opacity: 0;
+
+                    &:hover {
+                        opacity: 1;
+                    }
 
                     .icon {
-                        color: #959caa;
+                        color: #a5bfc9;
                         padding: 8px 8px 0 0;
                         cursor: pointer;
+                    }
 
-                        // &:hover {
-                        //     color: #727b8e;
-                        // }
+                    .add-icon,
+                    .label-icon {
+                        :hover {
+                            color: #1899f7;
+                        }
                     }
 
                     .active-icon {
-                        color: #1899F7;
-
+                        color: #1899f7;
                     }
 
                     .drag-icon {
@@ -40,12 +52,14 @@
                     line-height: 2;
 
                     .todo-item {
-
-                        border-radius: 2px;
+                        // border-radius: 2px;
                         padding: 0px 8px;
                         margin-bottom: 3px;
                         background-color: #fff;
+                    }
 
+                    .active-todo-wrapper {
+                        border-top: 1px solid #1899f7;
                     }
                 }
             }
@@ -58,8 +72,6 @@
         .border-bottom {
             border-bottom: 2px solid lightgray;
         }
-
-
     }
 
     .color-palette-container {
@@ -110,9 +122,7 @@
                     width: 4px;
                     margin: 0 auto;
                 }
-
             }
-
         }
     }
 
@@ -153,16 +163,12 @@
                 align-items: center;
                 padding: 8px;
             }
-
-
         }
 
         .file-container {
             border-bottom: 1px solid lightgray;
         }
-
     }
-
 }
 
 .hidden-drag-ghost {
@@ -181,17 +187,17 @@
     box-shadow: 1px 1px 2px 2px #ccc;
     background-color: white;
     padding: 16px;
+    line-height: 2;
 }
 
-
-
-
 .tooltip {
+    font-family: "Quicksand";
+    font-size: 12px;
     display: block !important;
     z-index: 10000;
 
     .tooltip-inner {
-        background: black;
+        background: #2f2f2f;
         color: white;
         border-radius: 8px;
         padding: 5px 10px 4px;
@@ -203,7 +209,7 @@
         border-style: solid;
         position: absolute;
         margin: 5px;
-        border-color: black;
+        border-color: #2f2f2f;
         z-index: 1;
     }
 
@@ -267,15 +273,15 @@
         }
     }
 
-    &[aria-hidden='true'] {
+    &[aria-hidden="true"] {
         visibility: hidden;
         opacity: 0;
-        transition: opacity .15s, visibility .15s;
+        transition: opacity 0.15s, visibility 0.15s;
     }
 
-    &[aria-hidden='false'] {
+    &[aria-hidden="false"] {
         visibility: visible;
         opacity: 1;
-        transition: opacity .15s;
+        transition: opacity 0.15s;
     }
 }

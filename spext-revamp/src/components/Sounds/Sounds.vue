@@ -2,10 +2,25 @@
 
 <script>
 import MusicLibrary from "./MusicLibrary/MusicLibrary";
+import YourMedia from "./Media/Media";
 export default {
   name: "Sounds",
   components: {
-    MusicLibrary
+    MusicLibrary,
+    YourMedia
+  },
+  data() {
+    return {
+      selectedSoundOption: ""
+    };
+  },
+  created() {
+    this.selectedSoundOption = "musicLibrary";
+  },
+  methods: {
+    toggle(tab) {
+      this.selectedSoundOption = tab;
+    }
   }
 };
 </script>

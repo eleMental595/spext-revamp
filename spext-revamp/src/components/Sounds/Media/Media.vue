@@ -2,7 +2,10 @@
 
 <script>
 export default {
-  data() {},
+  name: "YourMedia",
+  data() {
+    return {};
+  },
   methods: {}
 };
 </script>
