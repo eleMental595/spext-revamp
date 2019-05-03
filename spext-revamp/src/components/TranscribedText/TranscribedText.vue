@@ -292,7 +292,6 @@ export default {
     openPopover(type) {
       if (type === "addFile") {
         this.config.show = true;
-        // console.log(this.config);
       }
     }
   },
