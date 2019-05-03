@@ -55,18 +55,23 @@
 }
 
 nav {
+  font-family: 'Quicksand';
   background-color: #324851;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 0 16px;
   cursor: pointer;
-  /* height: 45px; */
+  height: 62px;
 }
 
 nav .sub-menu {
   display: flex;
+  font-size: 14px;
+  flex-grow: 2;
+  flex-basis: 0;
+  flex-shrink: 0;
 }
 
 nav .menu-middle {
@@ -74,6 +79,10 @@ nav .menu-middle {
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
+  font-size: 14px;
+  flex-grow: 3;
+  flex-basis: 0;
+  flex-shrink: 0;
 }
 
 .menu-middle span {
@@ -87,6 +96,9 @@ nav .nav-right-wrapper .arrow-back {
 nav .nav-right-wrapper {
   display: flex;
   align-items: center;
+  flex-grow: 2;
+  flex-basis: 0;
+  flex-shrink: 0;
 }
 
 nav .nav-right-wrapper .audio-description {
@@ -95,9 +107,13 @@ nav .nav-right-wrapper .audio-description {
   align-items: flex-start;
 }
 
+nav .nav-right-wrapper .audio-description .audio-label {
+  font-size: 15px;
+}
+
 nav .nav-right-wrapper .audio-description .desc {
-  color: #a0b9c4;
-  font-size: 13px;
+  color: #A5BFC9;
+  font-size: 12px;
   font-weight: lighter;
 }
 

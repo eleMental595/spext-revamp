@@ -5,7 +5,7 @@
         <i class="fa fa-chevron-left"></i>
       </div>
       <div class="audio-description">
-        <span>Zoom_wav.mp3</span>
+        <span class="audio-label">Zoom_wav.mp3</span>
         <span class="desc">Shared with Jogn Doe & 15 others</span>
       </div>
     </div>
@@ -14,11 +14,16 @@
       v-bind:class="{
             'menu-active': show }"
       @click="openTranscript"
-      ref="editTranscript"
     >
-      <i class="fa fa-h-square" style="margin-right: 8px;"></i>
-      <span>Transcript Mode</span>
-      <i class="fa fa-chevron-down" style="margin-left: 8px;"></i>
+      <div class="menu-middle-wrapper" ref="editTranscript">
+        <i class="fa fa-h-square" style="margin-right: 8px;"></i>
+        <span>Transcript Mode</span>
+        <i
+          class="fa fa-chevron-down"
+          style="margin-left: 4px; vertical-align: middle;"
+        ></i>
+      </div>
+
       <Popover :config="config">
         <div class="menu-item">
           <div class="menu-list">
