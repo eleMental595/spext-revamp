@@ -2,13 +2,17 @@
 
 <script>
 export default {
-  menus: [],
-  results: [],
   name: "MusicLibrary",
-  selectedMenu: "",
-  selectedAudio: "",
   components: {},
   data() {
+    return {
+      menus: [],
+      selectedMenu: "",
+      results: [],
+      selectedAudio: ""
+    };
+  },
+  created() {
     (this.menus = [
       { label: "Ambient", value: "ambient" },
       { label: "Morning", value: "morning" },
@@ -25,10 +29,9 @@ export default {
       ]),
       (this.selectedAudio = this.results[0].text);
   },
-  watch: {
+  methods: {
     changeOption(ev) {
       this.selectedMenu = ev.value;
-      console.log(this.selectedMenu);
     },
     changeAudio(audio) {
       this.selectedAudio = audio.text;

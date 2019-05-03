@@ -9,9 +9,8 @@
     <div
       v-for="menu in menus"
       class="menu-item"
-      @change="changeOption(menu)"
-      v-bind:class="{'selected' :
-            selectedMenu === menu.value }"
+      @click="changeOption(menu)"
+      :class="{'selected' : selectedMenu === menu.value }"
     >
       {{ menu.label }}
     </div>
@@ -21,7 +20,7 @@
       <li
         v-for="item in results"
         class="item"
-        @change="changeAudio(item)"
+        @click="changeAudio(item)"
         v-bind:class="{'selected-audio' :selectedAudio === item.text}"
       >
         <span class="icon"><i v-bind:class="item.icon"></i></span>

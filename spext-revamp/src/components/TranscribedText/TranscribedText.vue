@@ -2,8 +2,15 @@
 <style lang="scss" src="./TranscribedText.scss">
 </style>
 <script>
+import Popover from "./../core/Popover/Popover";
+import AddFiles from "./../AddFiles/AddFiles";
 export default {
   name: "TranscribedText",
+  config: {},
+  components: {
+    Popover,
+    AddFiles
+  },
   data() {
     return {
       todos: [],
@@ -22,7 +29,17 @@ export default {
         { code: "#e48130" }
       ],
       numbers: [1, 2, 3, 4, 5, 6],
-      text: ""
+      text: "",
+      addFilePopover: false,
+      config: {
+        show: false,
+        showFullScreen: true,
+        style: {
+          width: "1000px",
+          margin: "auto",
+          "max-height": "800px"
+        }
+      }
     };
   },
   //   computed() {
@@ -150,7 +167,7 @@ export default {
       }
     },
     dragEnd(ev) {
-       document.getElementById("label" + this.dragging).style.display = "block";
+      document.getElementById("label" + this.dragging).style.display = "block";
       document.getElementById("add" + this.dragging).style.display = "block";
       document.getElementById("drag" + this.dragging).style.opacity = "1";
 
@@ -271,6 +288,12 @@ export default {
       //     this.todos.splice(i, 1);
       //   }
       // }
+    },
+    openPopover(type) {
+      if (type === "addFile") {
+        this.config.show = true;
+        // console.log(this.config);
+      }
     }
   },
   mounted() {
