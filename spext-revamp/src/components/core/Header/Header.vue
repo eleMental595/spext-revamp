@@ -22,7 +22,7 @@ export default {
     this.config = {
       show: false,
       style: {
-        width: "275px",
+        width: "300px",
         left: "",
         top: ""
       }
@@ -32,7 +32,7 @@ export default {
     openTranscript(event) {
       this.config.show = !this.config.show;
       var style = {
-        width: "275px",
+        width: "300px",
         left: this.$refs.editTranscript.offsetLeft + "px",
         top: this.$refs.navbar.offsetHeight - 8 + "px"
       };

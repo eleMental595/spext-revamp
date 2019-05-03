@@ -11,7 +11,7 @@ import UploadMedia from "./components/UploadMedia/UploadMedia";
 Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
-  base:'spext-revamp',
+  // base:'spext-revamp',
   routes: [
     {
       path: "/",

@@ -27,6 +27,14 @@ body {
   /* overflow: hidden; */
   margin: 0;
 }
+@font-face {
+  font-family: "Quicksand";
+  src: url("./assets/fonts/Quicksand/Quicksand-Light.ttf");
+}
+@font-face {
+  font-family: "Muli";
+  src: url("./assets/fonts/Muli/Muli-Regular.ttf");
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

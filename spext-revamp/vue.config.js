@@ -1,3 +1,3 @@
-module.exports = {
-  publicPath: "spext-revamp/"
-};
+// module.exports = {
+//   publicPath: "spext-revamp/"
+// };
