@@ -15,6 +15,7 @@
             <i v-tooltip.left="'Label'" class="fa fa-tag"></i>
           </div>
 
+          <transition name="bounce">          
           <div v-if="item.showLabelModal" v-bind:id="'label-modal' + i">
             <div class="color-palette-container">
               <div class="palette-header-container">
@@ -36,6 +37,7 @@
               </div>
             </div>
           </div>
+          </transition>  
 
           <div class="icon drag-icon"v-bind:id="'drag'+i"
             @mousedown="addEventListener($event)">
@@ -47,6 +49,7 @@
             <i v-tooltip.bottom-end="'Click to add'" class="fa fa-plus-circle"></i>
           </div>
 
+          <transition name="bounce">
           <div v-if="item.showAddActionModal" v-bind:id="'add-action-modal' +
             i">
             <div class="add-action-container">
@@ -73,7 +76,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>            
+          </transition>
+
         </div>
         <div class="todo-text-block">
           <div class="todo-item" v-bind:id="'todo-item'+i">
