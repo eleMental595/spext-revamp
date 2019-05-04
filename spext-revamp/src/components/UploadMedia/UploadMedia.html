@@ -1,3 +1,33 @@
-<div>
-  upload media
+<div class="parent-container">
+  <div class="bold header">Upload Media</div>
+  <div v-if="uploadStatus==='enter'">
+    <div class="upload-media-container">
+      <div class="upload-media-input"><input type="text" /></div>
+      <div class="bold title">Title</div>
+      <div class="title-input"><input type="text" v-model="titleName" /></div>
+      <div class="btn-container">
+        <button v-on:click="uploadFile()" class="upload-btn">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    v-else-if="uploadStatus==='inprogress'"
+    class="upload-progress-container"
+  >
+    <div class="upload-info">
+      <span>{{ titleName }}</span>
+      <span>({{ percentage }}%)</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-outer">
+        <div class="progress-inner" id="progress-inner"></div>
+      </div>
+    </div>
+  </div>
+
+  <div v-else-if="uploadStatus==='complete'" class="upload-complete-container">
+    <span class="icon-check-circle"><i class="fas fa-check-circle"></i></span>
+    <span v-if="titleName" class="file-title">{{ titleName }}</span>
+  </div>
 </div>
