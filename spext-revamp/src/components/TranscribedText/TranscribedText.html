@@ -34,6 +34,7 @@
               ></i>
             </div>
 
+			<transition name="bounce">  
             <div v-if="item.showLabelModal" v-bind:id="'label-modal' + i">
               <div class="color-palette-container">
                 <div class="palette-header-container">
@@ -57,7 +58,8 @@
                   </div>
                 </div>
               </div>
-            </div>
+			</div>
+			</transition>
 
             <div
               class=" icon drag-icon "
@@ -108,7 +110,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+			</div>			
           </div>
           <div class="todo-text-block">
             <div
@@ -129,8 +131,10 @@
   </div>
 
   <Popover :config="config">
+	<transition appear name="bounce">  
     <div>
       <AddFiles v-on:closeAddFile="closeAddFilePopover()"></AddFiles>
     </div>
+	</transition>
   </Popover>
 </div>

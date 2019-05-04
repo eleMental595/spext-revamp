@@ -306,3 +306,27 @@
     transition: opacity 0.15s;
   }
 }
+
+.bounce-enter-active {
+    animation: bounce-in .3s ease;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .3s reverse ease;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    33% {
+        transform: scale(1)
+    }
+    66% {
+        transform: scale(1.02);
+        // opacity: 0.2;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
