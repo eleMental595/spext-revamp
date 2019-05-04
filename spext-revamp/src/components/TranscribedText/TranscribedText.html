@@ -130,7 +130,7 @@
 
   <Popover :config="config">
     <div>
-      <AddFiles></AddFiles>
+      <AddFiles v-on:closeAddFile="closeAddFilePopover()"></AddFiles>
     </div>
   </Popover>
 </div>
