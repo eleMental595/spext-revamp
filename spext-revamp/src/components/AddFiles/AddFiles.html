@@ -7,8 +7,7 @@
         class="action-item"
         v-bind:key="i"
         @click="changeView(action,i)"
-        :class="selectedOption === action.name ? 'selected': ''"
-      >
+        :class="selectedOption === action.name ? 'selected': ''">
         {{ action.label }}
         <!-- <router-link :to="action.path">{{ action.label }}</router-link> -->
       </div>
