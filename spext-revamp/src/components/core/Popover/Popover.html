@@ -1,7 +1,11 @@
 <div
   :class="[(config.show) === true ? 'overlay' : '', (config.showFullScreen && config.show) === true ? 'full-screen': '']"
 >
+<transition name="slide-fade">
+
+
   <div v-if="config.show" v-bind:style="config.style" class="menu" id="menu">
     <slot></slot>
   </div>
+</transition>
 </div>
