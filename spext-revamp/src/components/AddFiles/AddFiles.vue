@@ -37,7 +37,7 @@ export default {
       this.selectedOption = option.name;
     },
     closePopover() {
-      this.$emit("closePopover");
+      this.$emit("closeAddFile");
     }
   }
 };
