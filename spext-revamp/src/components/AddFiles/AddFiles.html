@@ -7,23 +7,18 @@
         class="action-item"
         v-bind:key="i"
         @click="changeView(action,i)"
-        :class="selectedOption === action.name ? 'selected': ''"
-      >
+        :class="selectedOption === action.name ? 'selected': ''">
         {{ action.label }}
         <!-- <router-link :to="action.path">{{ action.label }}</router-link> -->
       </div>
     </div>
     <div class="action-content">
-      <!-- <router-view></router-view> -->
-      <div v-if="selectedOption === 'spextdocs'">
-        <SpecsDocs></SpecsDocs>
-      </div>
-      <div v-else-if="selectedOption === 'sounds'">
-        <Sounds></Sounds>
-      </div>
-      <div v-else-if="selectedOption === 'uploadmedia'">
-        <UploadMedia></UploadMedia>
-      </div>
+	  <!-- <router-view></router-view> -->
+	  <transition name="component-fade" mode="out-in">
+        <SpecsDocs v-if="selectedOption === 'spextdocs'"></SpecsDocs>
+        <Sounds  v-else-if="selectedOption === 'sounds'"></Sounds>
+        <UploadMedia v-else-if="selectedOption === 'uploadmedia'"></UploadMedia>
+	</transition>
     </div>
   </div>
   <div class="add-files-footer">

@@ -298,20 +298,21 @@ export default {
         this.config.show = true;
       }
     },
+    closePopover(ev) {
+      this.config.show = false;
+    },
     displayIcons(i) {
       document
         .getElementById("handle-container" + i)
         .classList.add("active-handle-container");
     },
     hideIcons(i) {
-      if (this.todos[i].showAddActionModal || this.todos[i].showLabelModal) {
-        document
-          .getElementById("handle-container" + i)
-          .classList.remove("active-handle-container");
-        document
-          .getElementById("todo-item" + i)
-          .classList.remove("active-todo-wrapper");
-      }
+      document
+        .getElementById("handle-container" + i)
+        .classList.remove("active-handle-container");
+      document
+        .getElementById("todo-item" + i)
+        .classList.remove("active-todo-wrapper");
     },
     closeAddFilePopover() {
       this.config.show = false;

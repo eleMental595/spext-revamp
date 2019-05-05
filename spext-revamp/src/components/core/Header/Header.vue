@@ -10,7 +10,10 @@ export default {
         style: {
           width: "",
           left: "",
-          top: ""
+          top: "",
+          "border-radius": "",
+          "box-sizing": "",
+          "box-shadow": ""
         }
       }
     };
@@ -24,7 +27,10 @@ export default {
       style: {
         width: "300px",
         left: "",
-        top: ""
+        top: "",
+        "border-radius": "5px",
+        "box-sizing": "border - box",
+        "box-shadow": "0px 4px 4px rgba(116, 116, 116, 0.25)"
       }
     };
   },
@@ -34,7 +40,10 @@ export default {
       var style = {
         width: "300px",
         left: this.$refs.editTranscript.offsetLeft + "px",
-        top: this.$refs.navbar.offsetHeight - 8 + "px"
+        top: this.$refs.navbar.offsetHeight - 4 + "px",
+        "border-radius": "5px",
+        "box-sizing": "border - box",
+        "box-shadow": "0px 4px 4px rgba(116, 116, 116, 0.25)"
       };
       this.$set(this.config, "style", style);
     }

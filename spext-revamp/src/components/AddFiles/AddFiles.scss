@@ -119,3 +119,11 @@
     }
   }
 }
+
+.component-fade-enter-active, .component-fade-leave-active {
+	transition: all .1s ease;	
+  }
+  .component-fade-enter, .component-fade-leave-to {
+	opacity: 0;
+	transform: translateX(-30px);
+  }
