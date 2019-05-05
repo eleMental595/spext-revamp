@@ -7,8 +7,7 @@
         class="action-item"
         v-bind:key="i"
         @click="changeView(action,i)"
-        :class="selectedOption === action.name ? 'selected': ''"
-      >
+        :class="selectedOption === action.name ? 'selected': ''">
         {{ action.label }}
         <!-- <router-link :to="action.path">{{ action.label }}</router-link> -->
       </div>
@@ -29,7 +28,9 @@
     </div>
     <div class="btn-container">
       <div class="btn-wrapper">
-        <button class="btn cancel-btn">Cancel</button>
+        <button class="btn cancel-btn" v-on:click="closePopover()">
+          Cancel
+        </button>
       </div>
       <div class="btn-wrapper add-file-btn-wrapper">
         <button class="btn add-file-btn">Add File</button>

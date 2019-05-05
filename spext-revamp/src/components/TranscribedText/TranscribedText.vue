@@ -298,6 +298,9 @@ export default {
         this.config.show = true;
       }
     },
+    closePopover(ev) {
+      this.config.show = false;
+    },
     displayIcons(i) {
       document
         .getElementById("handle-container" + i)
@@ -310,6 +313,9 @@ export default {
       document
         .getElementById("todo-item" + i)
         .classList.remove("active-todo-wrapper");
+    },
+    closeAddFilePopover() {
+      this.config.show = false;
     }
   },
   mounted() {
