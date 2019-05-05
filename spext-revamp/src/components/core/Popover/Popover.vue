@@ -21,6 +21,6 @@ export default {
 </script>
 
 
-<style lang="css" scoped src="./Popover.css">
+<style lang="scss" scoped src="./Popover.scss">
 </style>
 
