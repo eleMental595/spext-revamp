@@ -298,6 +298,9 @@ export default {
         this.config.show = true;
       }
     },
+    closePopover(ev) {
+      this.config.show = false;
+    },
     displayIcons(i) {
       document
         .getElementById("handle-container" + i)

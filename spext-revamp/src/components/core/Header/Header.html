@@ -9,20 +9,15 @@
         <span class="desc">Shared with Jogn Doe & 15 others</span>
       </div>
     </div>
-    <div
-      class="menu-middle anchor"
-      v-bind:class="{
-            'menu-active': show }"
-      @click="openTranscript"
-    >
-      <div class="menu-middle-wrapper" ref="editTranscript">
+    <div class="menu-middle anchor" @click="openTranscript">
+      <div class="menu-middle-wrapper" ref="editTranscript" v-bind:class="{
+        'menu-active': config.show }">
         <i class="fa fa-h-square" style="margin-right: 8px;"></i>
         <span>Transcript Mode</span>
-        <i
-          class="fa fa-chevron-down"
-          style="margin-left: 4px; vertical-align: middle;"
-        ></i>
+        <i class="fa fa-chevron-down" style="margin-left: 16px; vertical-align:
+          middle;"></i>
       </div>
+
 
       <Popover :config="config">
         <div class="menu-item">
@@ -31,7 +26,7 @@
               <i class="fa fa-volume-up"></i>
             </div>
             <div class="menu-element">
-              <span class="bold">Edit Media</span>
+              <span class="label">Edit Media</span>
               <span>Shows filter words, silence etc</span>
             </div>
           </div>
@@ -42,7 +37,7 @@
               <i class="fa fa-ellipsis-v"></i>
             </div>
             <div class="menu-element">
-              <span class="bold">Storyboard</span>
+              <span class="label">Storyboard</span>
               <span>visualize the transcript as a grid</span>
             </div>
           </div>
@@ -51,7 +46,7 @@
               <i class="fa fa-volume-up"></i>
             </div>
             <div class="menu-element">
-              <span class="bold">Edit Transcript</span>
+              <span class="label">Edit Transcript</span>
               <span>Correct the transcript for errors</span>
             </div>
           </div>

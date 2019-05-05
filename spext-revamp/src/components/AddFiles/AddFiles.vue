@@ -35,6 +35,9 @@ export default {
   methods: {
     changeView(option, index) {
       this.selectedOption = option.name;
+    },
+    closePopover() {
+      this.$emit("closePopover");
     }
   }
 };

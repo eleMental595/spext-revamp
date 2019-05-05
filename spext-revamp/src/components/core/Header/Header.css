@@ -54,6 +54,10 @@
   margin: 8px;
 }
 
+.menu-item .menu-list .menu-element .label {
+  font-family: 'QuicksandBold';
+}
+
 nav {
   font-family: 'Quicksand';
   background-color: #324851;
@@ -69,20 +73,31 @@ nav {
 nav .sub-menu {
   display: flex;
   font-size: 14px;
-  flex-grow: 2;
+  justify-content: flex-end;
+  width: calc(100% / 3);
+  /* flex-grow: 2;
   flex-basis: 0;
-  flex-shrink: 0;
+  flex-shrink: 0; */
 }
 
 nav .menu-middle {
-  width: 168px;
+  /* width: 168px; */
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
   font-size: 14px;
-  flex-grow: 3;
+  width: calc(100% / 3);
+  /* flex-grow: 3;
   flex-basis: 0;
-  flex-shrink: 0;
+  flex-shrink: 0; */
+}
+
+nav .menu-middle .menu-middle-wrapper {
+  padding: 8px 16px;
+}
+
+nav .menu-middle .menu-middle-wrapper:hover {
+  background: #5b6b72;
 }
 
 .menu-middle span {
@@ -96,9 +111,10 @@ nav .nav-right-wrapper .arrow-back {
 nav .nav-right-wrapper {
   display: flex;
   align-items: center;
-  flex-grow: 2;
+  width: calc(100% / 3);
+  /* flex-grow: 2;
   flex-basis: 0;
-  flex-shrink: 0;
+  flex-shrink: 0; */
 }
 
 nav .nav-right-wrapper .audio-description {
