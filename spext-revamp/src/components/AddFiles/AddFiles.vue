@@ -30,7 +30,7 @@ export default {
         path: "/addfile/uploadmedia"
       }
     ];
-    this.selectedOption = this.actionList[1].name;
+    this.selectedOption = this.actionList[0].name;
   },
   methods: {
     changeView(option, index) {
