@@ -2,21 +2,17 @@
   <div class="sound-nav">
       <div :class="selectedSoundOption === 'yourMedia' ? 'selected': ''" class="sound-option" @click="toggle('yourMedia')">
         <div class="mar-b-10">Your Media</div>
-        <div class="underline"></div>
-        </div>
+          <div class="underline"></div>
+      </div>
       <div :class="selectedSoundOption === 'musicLibrary' ? 'selected': ''" class="sound-option" @click="toggle('musicLibrary')">
         <div  class="mar-b-10">Music Library</div>
-        <div class="underline">
-        </div>
+          <div class="underline"></div>
       </div>
   </div>
     <div class="content">
-    <div v-if="selectedSoundOption === 'yourMedia'">
-      <YourMedia></YourMedia>
-    </div>
-    <div v-if="selectedSoundOption === 'musicLibrary'">
-      <MusicLibrary></MusicLibrary>
-    </div>
+      <transition name="component-fade-y" mode="out-in">
+          <YourMedia  v-if="selectedSoundOption === 'yourMedia'"></YourMedia>
+          <MusicLibrary  v-if="selectedSoundOption === 'musicLibrary'"></MusicLibrary>
+      </transition>
     </div>
 </div>
-</router-view>
