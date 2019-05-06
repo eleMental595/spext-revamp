@@ -4,6 +4,7 @@
 <script>
 import Popover from "./../core/Popover/Popover";
 import AddFiles from "./../AddFiles/AddFiles";
+let handleOutsideClick;
 export default {
   name: "TranscribedText",
   config: {},
@@ -15,18 +16,18 @@ export default {
     return {
       todos: [],
       colors: [
-        { code: "#f44236" },
-        { code: "#e91d61" },
-        { code: "#00bbd4" },
-        { code: "#efc00c" },
-        { code: "#363f46" },
-        { code: "#4b4f46" },
-        { code: "#78554a" },
-        { code: "#1400ff" },
-        { code: "#ffaaaa" },
-        { code: "#673ab5" },
-        { code: "#9c25b1" },
-        { code: "#e48130" }
+        { code: "#f44236", isFocused: false },
+        { code: "#e91d61", isFocused: false },
+        { code: "#00bbd4", isFocused: false },
+        { code: "#efc00c", isFocused: false },
+        { code: "#363f46", isFocused: false },
+        { code: "#4b4f46", isFocused: false },
+        { code: "#78554a", isFocused: false },
+        { code: "#1400ff", isFocused: false },
+        { code: "#ffaaaa", isFocused: false },
+        { code: "#673ab5", isFocused: false },
+        { code: "#9c25b1", isFocused: false },
+        { code: "#e48130", isFocused: false }
       ],
       numbers: [1, 2, 3, 4, 5, 6],
       text: "",
@@ -35,36 +36,50 @@ export default {
         show: false,
         showFullScreen: true,
         style: {
-          width: "900px",
+          width: "",
           margin: "auto",
           "max-height": "800px"
         }
-      }
+      },
+      fileTitle: "Zoom_wave.mp3"
     };
   },
 
   created() {
     this.todos = [
       {
-        title: `1: Lorem ILorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+        title: `1: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
         showLabelModal: false,
         showAddActionModal: false,
         labelColor: "",
-        showHorizontalLine: false
+        showHorizontalLine: false,
+        showIcons: false,
+        labelName: ""
       },
       {
-        title: `2: Contrary English versions from the 1914 translation by H. Rackha`,
+        title: `2: Contrary to popular belief, Lorem Ipsum is not simply random text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
         showLabelModal: false,
         showAddActionModal: false,
         labelColor: "",
-        showHorizontalLine: false
+        showHorizontalLine: false,
+        showIcons: false,
+        labelName: ""
       },
       {
-        title: `3: Contrary to popular belief, Lorem Ipsum is not simply random text.`,
+        title: `3: Contrary to popular belief, Lorem Ipsum is not simply random text.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
         showLabelModal: false,
         showAddActionModal: false,
         labelColor: "",
-        showHorizontalLine: false
+        showHorizontalLine: false,
+        showIcons: false,
+        labelName: ""
       }
     ];
 
@@ -91,13 +106,6 @@ export default {
         document.getElementById("label" + which).style.display = "none";
         document.getElementById("add" + which).style.display = "none";
         document.getElementById("drag" + which).style.opacity = "0";
-        if (this.todos[which].showLabelModal) {
-          document.getElementById("label-modal" + which).style.display = "none";
-        }
-        if (this.todos[which].showAddActionModal) {
-          document.getElementById("add-action-modal" + which).style.display =
-            "none";
-        }
         var psuedoEle = document.createElement("div");
         psuedoEle.innerHTML = draggedElement.innerHTML;
         psuedoEle.id = "draggedPsuedoEle";
@@ -122,6 +130,7 @@ export default {
       ev.dataTransfer.setDragImage(dragGhost, 0, 0);
     },
     dragEnter(ev, i) {
+      this.todos[this.dragging].show;
       document.getElementById("label" + this.dragging).style.display = "block";
       document.getElementById("add" + this.dragging).style.display = "block";
       document.getElementById("drag" + this.dragging).style.opacity = "1";
@@ -148,15 +157,6 @@ export default {
       document.getElementById("add" + this.dragging).style.display = "block";
       document.getElementById("drag" + this.dragging).style.opacity = "1";
 
-      if (this.todos[this.dragging].showLabelModal) {
-        document.getElementById("label-modal" + this.dragging).style.display =
-          "block";
-      }
-      if (this.todos[this.dragging].showAddActionModal) {
-        document.getElementById(
-          "add-action-modal" + this.dragging
-        ).style.display = "block";
-      }
       if (this.activeTodoIndex != i) {
         document
           .getElementById("todo-wrapper" + i)
@@ -170,7 +170,6 @@ export default {
       document.getElementById("label" + this.dragging).style.display = "block";
       document.getElementById("add" + this.dragging).style.display = "block";
       document.getElementById("drag" + this.dragging).style.opacity = "1";
-
       this.dragging = -1;
       var todoItems = document.getElementsByClassName("todo-wrapper");
       for (let i = 0; i < todoItems.length; i++) {
@@ -196,15 +195,11 @@ export default {
       document.getElementById("label" + this.dragging).style.display = "block";
       document.getElementById("add" + this.dragging).style.display = "block";
       document.getElementById("drag" + this.dragging).style.opacity = "1";
-
-      document.getElementById("add" + to).classList.remove("active-icon");
-      document.getElementById("label" + to).classList.remove("active-icon");
-      this.todos[this.dragging].showHorizontalLine = false;
       this.moveItem(this.dragging, to);
       this.todos[to]["dragging"] = false;
       // ev.target.style.marginTop = "2px";
       // ev.target.style.marginBottom = "2px";
-      ev.srcElement.style.opacity = "1";
+      // ev.srcElement.style.opacity = "1";
       this.activeTodoIndex = -1;
       // remove element
       var psuedoEle = document.getElementById("draggedPsuedoEle");
@@ -215,6 +210,7 @@ export default {
       if (dragghost) {
         dragghost.parentNode.removeChild(dragghost);
       }
+      this.todos[to].showIcons = false;
     },
     removeItemAt(index) {
       this.todos.splice(index, 1);
@@ -237,19 +233,29 @@ export default {
         psuedoEle.style.opacity = "1";
       }
     },
-    displayLabelPopover(selectedIndex) {
-      let isOpen = !this.todos[selectedIndex].showLabelModal;
-      this.todos[selectedIndex].showLabelModal = isOpen;
-      if (this.todos[selectedIndex].showAddActionModal) {
-        this.todos[selectedIndex].showAddActionModal = false;
-      }
-    },
-    displayAddActionPopover(selectedIndex) {
-      let isOpen = !this.todos[selectedIndex].showAddActionModal;
-      this.todos[selectedIndex].showAddActionModal = isOpen;
-      this.todos[selectedIndex].showHorizontalLine = isOpen;
-      if (this.todos[selectedIndex].showLabelModal) {
-        this.todos[selectedIndex].showLabelModal = false;
+    displayPopover(selectedIndex, type) {
+      switch (type) {
+        case "label":
+          var isOpen = !this.todos[selectedIndex].showLabelModal;
+          this.todos[selectedIndex].showLabelModal = isOpen;
+          if (this.todos[selectedIndex].showAddActionModal) {
+            this.todos[selectedIndex].showAddActionModal = false;
+            this.todos[selectedIndex].showHorizontalLine = false;
+          }
+          if (!this.todos[selectedIndex].labelColor) {
+            this.todos[selectedIndex].labelColor = this.colors[0].code;
+          }
+          break;
+        case "addAction":
+          var isOpen = !this.todos[selectedIndex].showAddActionModal;
+          this.todos[selectedIndex].showAddActionModal = isOpen;
+          this.todos[selectedIndex].showHorizontalLine = !this.todos[
+            selectedIndex
+          ].showHorizontalLine;
+          if (this.todos[selectedIndex].showLabelModal) {
+            this.todos[selectedIndex].showLabelModal = false;
+          }
+          break;
       }
     },
     selectLabelColor(selectedIndex, selectedColorCode) {
@@ -291,30 +297,46 @@ export default {
       //   }
       // }
     },
-    openPopover(type) {
-      console.log(type);
+    openPopover(type, i) {
+      this.todos[i].showAddActionModal = false;
+      this.todos[i].showHorizontalLine = false;
+
       if (type === "addFile") {
         this.config.show = true;
+        var style = {
+          left: this.$refs.transcriber[0].offsetLeft + "px",
+          width: this.$refs.transcriber[0].clientWidth + "px"
+        };
+        this.$set(this.config, "style", style);
       }
     },
     closePopover(ev) {
       this.config.show = false;
     },
+    closeAllPopover() {
+      for (let i = 0; i < this.todos.length; i++) {
+        this.todos[i].showAddActionModal = false;
+        this.todos[i].showLabelModal = false;
+      }
+    },
     displayIcons(i) {
-      document
-        .getElementById("handle-container" + i)
-        .classList.add("active-handle-container");
+      this.todos[i].showIcons = true;
     },
     hideIcons(i) {
-      document
-        .getElementById("handle-container" + i)
-        .classList.remove("active-handle-container");
-      document
-        .getElementById("todo-item" + i)
-        .classList.remove("active-todo-wrapper");
+      this.todos[i].showIcons = false;
+      this.todos[i].showAddActionModal = false;
+      this.todos[i].showLabelModal = false;
+      this.todos[i].showHorizontalLine = false;
     },
+
     closeAddFilePopover() {
       this.config.show = false;
+    },
+    saveLabelName(event, i, labelName) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        this.todos[i].showLabelModal = false;
+      }
     }
   },
   mounted() {
