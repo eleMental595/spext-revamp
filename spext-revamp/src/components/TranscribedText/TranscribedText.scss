@@ -58,6 +58,11 @@
               opacity: 0;
             }
           }
+          .on-popover-open {
+            i {
+              opacity: 1;
+            }
+          }
 
           .active-label {
             i {

@@ -12,6 +12,7 @@ export default {
     Popover,
     AddFiles
   },
+
   data() {
     return {
       todos: [],
@@ -32,7 +33,7 @@ export default {
       numbers: [1, 2, 3, 4, 5, 6],
       text: "",
       addFilePopover: false,
-      config: {
+      addFilePopoverConfig: {
         show: false,
         showFullScreen: true,
         style: {
@@ -49,37 +50,58 @@ export default {
     this.todos = [
       {
         title: `1: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-         Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
-        showLabelModal: false,
-        showAddActionModal: false,
+       `,
+
         labelColor: "",
         showHorizontalLine: false,
         showIcons: false,
-        labelName: ""
+        labelName: "",
+        labelPopoverConfig: {
+          show: false,
+          isPositionFixed: false,
+          style: {}
+        },
+        addActionPopoverConfig: {
+          show: false,
+          isPositionFixed: false,
+          style: {}
+        }
       },
       {
-        title: `2: Contrary to popular belief, Lorem Ipsum is not simply random text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
-        showLabelModal: false,
-        showAddActionModal: false,
+        title: `2: Contrary to popular belief, Lorem Ipsum is not simply random text.
+       `,
+
         labelColor: "",
         showHorizontalLine: false,
         showIcons: false,
-        labelName: ""
+        labelName: "",
+        labelPopoverConfig: {
+          show: false,
+          isPositionFixed: false,
+          style: {}
+        },
+        addActionPopoverConfig: {
+          show: false,
+          isPositionFixed: false,
+          style: {}
+        }
       },
       {
-        title: `3: Contrary to popular belief, Lorem Ipsum is not simply random text.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-        showLabelModal: false,
-        showAddActionModal: false,
+        title: `3: Contrary to popular belief, Lorem Ipsum is not simply random text..
+        `,
+
         labelColor: "",
         showHorizontalLine: false,
         showIcons: false,
-        labelName: ""
+        labelName: "",
+        labelPopoverConfig: {
+          show: false,
+          style: {}
+        },
+        addActionPopoverConfig: {
+          show: false,
+          style: {}
+        }
       }
     ];
 
@@ -110,6 +132,7 @@ export default {
         psuedoEle.innerHTML = draggedElement.innerHTML;
         psuedoEle.id = "draggedPsuedoEle";
         const computedStyle = window.getComputedStyle(draggedElement);
+
         Array.from(computedStyle).forEach(key =>
           psuedoEle.style.setProperty(
             key,
@@ -233,31 +256,7 @@ export default {
         psuedoEle.style.opacity = "1";
       }
     },
-    displayPopover(selectedIndex, type) {
-      switch (type) {
-        case "label":
-          var isOpen = !this.todos[selectedIndex].showLabelModal;
-          this.todos[selectedIndex].showLabelModal = isOpen;
-          if (this.todos[selectedIndex].showAddActionModal) {
-            this.todos[selectedIndex].showAddActionModal = false;
-            this.todos[selectedIndex].showHorizontalLine = false;
-          }
-          if (!this.todos[selectedIndex].labelColor) {
-            this.todos[selectedIndex].labelColor = this.colors[0].code;
-          }
-          break;
-        case "addAction":
-          var isOpen = !this.todos[selectedIndex].showAddActionModal;
-          this.todos[selectedIndex].showAddActionModal = isOpen;
-          this.todos[selectedIndex].showHorizontalLine = !this.todos[
-            selectedIndex
-          ].showHorizontalLine;
-          if (this.todos[selectedIndex].showLabelModal) {
-            this.todos[selectedIndex].showLabelModal = false;
-          }
-          break;
-      }
-    },
+
     selectLabelColor(selectedIndex, selectedColorCode) {
       this.todos[selectedIndex].labelColor = selectedColorCode;
       document.getElementById(
@@ -275,15 +274,15 @@ export default {
       //       .firstChild.data;
       //   var oldItem = {
       //     title: textToBeReplaced,
-      //     showLabelModal: false,
-      //     showAddActionModal: false,
+      //     labelPopoverConfig.show: false,
+      //     addActionPopoverConfig.show: false,
       //     labelColor: ""
       //   };
       //   this.todos.splice(i, 1, oldItem);
       //   var newItem = {
       //     title: newTitleToBeAdded,
-      //     showLabelModal: false,
-      //     showAddActionModal: false,
+      //     labelPopoverConfig.show: false,
+      //     addActionPopoverConfig.show: false,
       //     labelColor: ""
       //   };
       //   this.todos.splice(i + 1, 0, newItem);
@@ -297,26 +296,73 @@ export default {
       //   }
       // }
     },
-    openPopover(type, i) {
-      this.todos[i].showAddActionModal = false;
-      this.todos[i].showHorizontalLine = false;
+    openPopover(type, selectedIndex) {
+      switch (type) {
+        case "addFile":
+          this.todos[selectedIndex].addActionPopoverConfig.show = false;
+          this.todos[selectedIndex].showHorizontalLine = false;
+          this.addFilePopoverConfig.show = true;
+          var style = {
+            left: this.$refs.transcriber[0].offsetLeft + "px",
+            width: this.$refs.transcriber[0].clientWidth + "px"
+          };
+          this.$set(this.config, "style", style);
+          break;
+        case "label":
+          this.todos[selectedIndex].labelPopoverConfig.show = !this.todos[
+            selectedIndex
+          ].labelPopoverConfig.show;
+          if (this.todos[selectedIndex].addActionPopoverConfig.show) {
+            this.todos[selectedIndex].addActionPopoverConfig.show = false;
+            this.todos[selectedIndex].showHorizontalLine = false;
+          }
+          if (!this.todos[selectedIndex].labelColor) {
+            this.todos[selectedIndex].labelColor = this.colors[0].code;
+          }
 
-      if (type === "addFile") {
-        this.config.show = true;
-        var style = {
-          left: this.$refs.transcriber[0].offsetLeft + "px",
-          width: this.$refs.transcriber[0].clientWidth + "px"
-        };
-        this.$set(this.config, "style", style);
+          var style = {
+            left: this.$refs["label" + selectedIndex][0].offsetLeft + 10 + "px",
+            top: this.$refs["label" + selectedIndex][0].offsetTop + 20 + "px"
+          };
+          this.$set(
+            this.todos[selectedIndex].labelPopoverConfig,
+            "style",
+            style
+          );
+          break;
+        case "addAction":
+          this.todos[selectedIndex].addActionPopoverConfig.show = !this.todos[
+            selectedIndex
+          ].addActionPopoverConfig.show;
+          // this.todos[selectedIndex].showHorizontalLine = !this.todos[
+          //   selectedIndex
+          // ].showHorizontalLine;
+          if (this.todos[selectedIndex].labelPopoverConfig.show) {
+            this.todos[selectedIndex].labelPopoverConfig.show = false;
+          }
+          if (this.todos[selectedIndex].addActionPopoverConfig.show) {
+            console.log(this.$refs);
+          }
+
+          var style = {
+            left: this.$refs["add" + selectedIndex][0].offsetLeft + 32 + "px",
+            top: this.$refs["add" + selectedIndex][0].offsetTop + "px"
+          };
+          this.$set(
+            this.todos[selectedIndex].addActionPopoverConfig,
+            "style",
+            style
+          );
+          break;
       }
     },
     closePopover(ev) {
-      this.config.show = false;
+      this.addFilePopoverConfig.show = false;
     },
     closeAllPopover() {
       for (let i = 0; i < this.todos.length; i++) {
-        this.todos[i].showAddActionModal = false;
-        this.todos[i].showLabelModal = false;
+        this.todos[i].addActionPopoverConfig.show = false;
+        this.todos[i].labelPopoverConfig.show = false;
       }
     },
     displayIcons(i) {
@@ -324,9 +370,6 @@ export default {
     },
     hideIcons(i) {
       this.todos[i].showIcons = false;
-      this.todos[i].showAddActionModal = false;
-      this.todos[i].showLabelModal = false;
-      this.todos[i].showHorizontalLine = false;
     },
 
     closeAddFilePopover() {
@@ -335,7 +378,7 @@ export default {
     saveLabelName(event, i, labelName) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        this.todos[i].showLabelModal = false;
+        this.todos[i].labelPopoverConfig.show = false;
       }
     }
   },
