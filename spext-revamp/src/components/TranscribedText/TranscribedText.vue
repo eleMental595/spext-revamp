@@ -334,14 +334,11 @@ export default {
           this.todos[selectedIndex].addActionPopoverConfig.show = !this.todos[
             selectedIndex
           ].addActionPopoverConfig.show;
-          // this.todos[selectedIndex].showHorizontalLine = !this.todos[
-          //   selectedIndex
-          // ].showHorizontalLine;
+          this.todos[selectedIndex].showHorizontalLine = !this.todos[
+            selectedIndex
+          ].showHorizontalLine;
           if (this.todos[selectedIndex].labelPopoverConfig.show) {
             this.todos[selectedIndex].labelPopoverConfig.show = false;
-          }
-          if (this.todos[selectedIndex].addActionPopoverConfig.show) {
-            console.log(this.$refs);
           }
 
           var style = {

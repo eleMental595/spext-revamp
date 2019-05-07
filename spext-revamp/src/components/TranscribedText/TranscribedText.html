@@ -62,7 +62,9 @@
             </div>
           </div>
           <div class="todo-text-block" ref="transcriber">
-            <div :class="{'active-line':item.showHorizontalLine}"></div>
+            <div
+              :class="{'active-line':item.addActionPopoverConfig.show}"
+            ></div>
             <div
               class="todo-item"
               v-bind:id="'todo-item'+i"
