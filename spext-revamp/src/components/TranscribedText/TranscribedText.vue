@@ -306,7 +306,7 @@ export default {
             left: this.$refs.transcriber[0].offsetLeft + "px",
             width: this.$refs.transcriber[0].clientWidth + "px"
           };
-          this.$set(this.config, "style", style);
+          this.$set(this.addFilePopoverConfig, "style", style);
           break;
         case "label":
           this.todos[selectedIndex].labelPopoverConfig.show = !this.todos[
