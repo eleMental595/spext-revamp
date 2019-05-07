@@ -42,3 +42,12 @@
         }
     }
 }
+
+.component-fade-y-enter-active, .component-fade-y-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    opacity: 1;	
+}
+.component-fade-y-enter, .component-fade-y-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}

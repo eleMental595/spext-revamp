@@ -356,15 +356,7 @@ export default {
           break;
       }
     },
-    closePopover(ev) {
-      this.addFilePopoverConfig.show = false;
-    },
-    closeAllPopover() {
-      for (let i = 0; i < this.todos.length; i++) {
-        this.todos[i].addActionPopoverConfig.show = false;
-        this.todos[i].labelPopoverConfig.show = false;
-      }
-    },
+
     displayIcons(i) {
       this.todos[i].showIcons = true;
     },
@@ -373,7 +365,7 @@ export default {
     },
 
     closeAddFilePopover() {
-      this.config.show = false;
+      this.addFilePopoverConfig.show = false;
     },
     saveLabelName(event, i, labelName) {
       if (event.keyCode === 13) {
