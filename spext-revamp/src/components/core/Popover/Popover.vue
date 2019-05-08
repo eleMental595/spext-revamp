@@ -11,6 +11,7 @@ export default {
       if (event.target.classList[0] === "overlay") {
         console.log("overlay clicked");
         this.config.show = false;
+        this.$emit("popoverClose");
       }
     }
   },
