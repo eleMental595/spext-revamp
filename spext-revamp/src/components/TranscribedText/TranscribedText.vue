@@ -36,6 +36,7 @@ export default {
       addFilePopoverConfig: {
         show: false,
         showFullScreen: true,
+        transition: "bounce-center",
         style: {
           width: "",
           margin: "auto",
@@ -59,11 +60,13 @@ export default {
         labelPopoverConfig: {
           show: false,
           isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         },
         addActionPopoverConfig: {
           show: false,
           isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         }
       },
@@ -78,11 +81,13 @@ export default {
         labelPopoverConfig: {
           show: false,
           isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         },
         addActionPopoverConfig: {
           show: false,
           isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         }
       },
@@ -96,10 +101,14 @@ export default {
         labelName: "",
         labelPopoverConfig: {
           show: false,
+          isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         },
         addActionPopoverConfig: {
           show: false,
+          isPositionFixed: false,
+          transition: "bounce-in-left",
           style: {}
         }
       }

@@ -41,7 +41,7 @@
                 class="icon drag-icon"
                 v-bind:id="'drag'+i"
                 @mousedown="addEventListener($event)"
-                v-tooltip.top="'click here to drag'"
+                v-tooltip.top="'Click here to drag'"
                 v-bind:class="[{'hide-icon':!item.showIcons},{'on-popover-open':item.labelPopoverConfig.show||item.addActionPopoverConfig.show}]"
               >
                 <i class="fa fa-ellipsis-v"></i>
@@ -75,82 +75,78 @@
           </div>
         </div>
         <Popover :config="item.labelPopoverConfig">
-          <transition name="bounce">
-            <div
-              v-if="item.labelPopoverConfig.show"
-              v-bind:id="'label-modal' + i"
-            >
-              <div class="color-palette-container">
-                <div class="palette-header-container">
-                  <div class="header">
-                    <input
-                      contenteditable="true"
-                      ref="labelName"
-                      @keyup="saveLabelName($event,i,item.labelName)"
-                      v-model="item.labelName"
-                      placeholder="Label Name"
-                    />
-                  </div>
+          <div
+            v-if="item.labelPopoverConfig.show"
+            v-bind:id="'label-modal' + i"
+          >
+            <div class="color-palette-container">
+              <div class="palette-header-container">
+                <div class="header">
+                  <input
+                    contenteditable="true"
+                    ref="labelName"
+                    @keyup="saveLabelName($event,i,item.labelName)"
+                    v-model="item.labelName"
+                    placeholder="Label Name"
+                  />
                 </div>
-                <div class="color-list">
+              </div>
+              <div class="color-list">
+                <div
+                  class="color-item"
+                  @mouseover="color.isFocused=true"
+                  @mouseleave="color.isFocused=false"
+                  v-for="(color) in colors"
+                >
+                  <i
+                    class="fa fa-circle"
+                    v-on:click="selectLabelColor(i,color.code)"
+                    v-bind:class="{'active-color-item':item.labelColor===color.code}"
+                    v-bind:style="{color:color.code}"
+                  ></i>
                   <div
-                    class="color-item"
-                    @mouseover="color.isFocused=true"
-                    @mouseleave="color.isFocused=false"
-                    v-for="(color) in colors"
-                  >
-                    <i
-                      class="fa fa-circle"
-                      v-on:click="selectLabelColor(i,color.code)"
-                      v-bind:class="{'active-color-item':item.labelColor===color.code}"
-                      v-bind:style="{color:color.code}"
-                    ></i>
-                    <div
-                      class="active-color"
-                      v-bind:style="{backgroundColor:item.labelColor===color.code||color.isFocused?
+                    class="active-color"
+                    v-bind:style="{backgroundColor:item.labelColor===color.code||color.isFocused?
                           color.code:'#fff'}"
-                    ></div>
-                  </div>
+                  ></div>
                 </div>
               </div>
             </div>
-          </transition>
+          </div>
         </Popover>
         <Popover :config="item.addActionPopoverConfig">
-          <transition name="bounce">
-            <div
-              v-if="item.addActionPopoverConfig.show"
-              v-bind:id="'add-action-modal' +
+          <div
+            v-if="item.addActionPopoverConfig.show"
+            v-bind:id="'add-action-modal' +
                                 i"
-            >
-              <div class="add-action-container">
-                <div class="file-container" @click="openPopover('addFile',i)">
-                  <div class="icon-container">
-                    <div class="file-icon-wrapper">
-                      <i class="far fa-file-audio"></i>
-                    </div>
-                  </div>
-                  <div class="description">
-                    <div class="title">File</div>
-                    <div class="sub-title">
-                      Add a media or transcribed file
-                    </div>
+          >
+            <div class="add-action-container">
+              <div class="file-container" @click="openPopover('addFile',i)">
+                <div class="icon-container">
+                  <div class="file-icon-wrapper">
+                    <i class="far fa-file-audio"></i>
                   </div>
                 </div>
-                <div class="paragraph-break-container">
-                  <div class="icon-container">
-                    <div class="paragraph-icon-wrapper">
-                      <i class="fa fa-paragraph"></i>
-                    </div>
-                  </div>
-                  <div class="description">
-                    <div class="title">Paragraph Break</div>
-                    <div class="sub-title">Keyboard Shortcut-Enter Key</div>
+                <div class="description">
+                  <div class="title">File</div>
+                  <div class="sub-title">
+                    Add a media or transcribed file
                   </div>
                 </div>
               </div>
+              <div class="paragraph-break-container">
+                <div class="icon-container">
+                  <div class="paragraph-icon-wrapper">
+                    <i class="fa fa-paragraph"></i>
+                  </div>
+                </div>
+                <div class="description">
+                  <div class="title">Paragraph Break</div>
+                  <div class="sub-title">Keyboard Shortcut-Enter Key</div>
+                </div>
+              </div>
             </div>
-          </transition>
+          </div>
         </Popover>
       </div>
     </div>
@@ -158,10 +154,8 @@
   </div>
 
   <Popover :config="addFilePopoverConfig">
-    <transition appear name="bounce">
-      <div>
-        <AddFiles v-on:closeAddFile="closeAddFilePopover()"></AddFiles>
-      </div>
-    </transition>
+    <div>
+      <AddFiles v-on:closeAddFile="closeAddFilePopover()"></AddFiles>
+    </div>
   </Popover>
 </div>

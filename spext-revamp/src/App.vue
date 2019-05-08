@@ -26,7 +26,7 @@ export default {
 @import url("../node_modules/@fortawesome/fontawesome-pro/css/all.css");
 
 body {
-  /* overflow: hidden; */
+  overflow: hidden;
   margin: 0;
 }
 @font-face {
