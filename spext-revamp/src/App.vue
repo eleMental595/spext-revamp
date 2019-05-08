@@ -4,18 +4,21 @@
     <!-- <TranscribedText></TranscribedText> -->
     <!-- <Sounds></Sounds> -->
     <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/core/Header/Header.vue";
-import TranscribedText from "./components/TranscribedText/TranscribedText";
+// import TranscribedText from "./components/TranscribedText/TranscribedText";
 // import Sounds from "./components/Sounds/Sounds";
+import  Footer from '@bit/xerosanyam.spext.footer/';
+
 export default {
   name: "app",
   components: {
-    TranscribedText,
-    Header
+    Header,
+    Footer
     // Sounds
   }
 };
