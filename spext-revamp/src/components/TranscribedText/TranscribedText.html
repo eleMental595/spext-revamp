@@ -1,8 +1,8 @@
 <div>
   <div class="transcribe-text-container">
     <div class="block-left"></div>
-    <div class="block-center todo-list">
-      <div class="file-title">{{ fileTitle }}</div>
+    <div class="block-center todo-list" contenteditable="true">
+      <div contenteditable="false" class="file-title">{{ fileTitle }}</div>
       <div
         class="todo-wrapper"
         v-for="(item, i) in todos"
@@ -20,7 +20,11 @@
           @mouseover="displayIcons(i)"
           @mouseleave="hideIcons(i)"
         >
-          <div class="handle-container" v-bind:id="'handle-container'+i">
+          <div
+            class="handle-container"
+            v-bind:id="'handle-container'+i"
+            contenteditable="false"
+          >
             <div class="icon-wrapper">
               <div
                 :ref="'label'+i"
@@ -33,7 +37,7 @@
                 <i
                   v-tooltip.left=" item.labelName|| 'Label'"
                   v-on:click="openPopover('label',i)"
-                  class="fal fa-tag"
+                  :class="[item.labelPopoverConfig.show||item.labelColor?'fa fa-tag':'fal fa-tag']"
                 ></i>
               </div>
 
@@ -65,17 +69,14 @@
             <div
               :class="{'active-line':item.addActionPopoverConfig.show}"
             ></div>
-            <div
-              class="todo-item"
-              v-bind:id="'todo-item'+i"
-              contenteditable="true"
-            >
+            <div class="todo-item" v-bind:id="'todo-item'+i">
               {{ item.title }}
             </div>
           </div>
         </div>
         <Popover :config="item.labelPopoverConfig">
           <div
+            contenteditable="false"
             v-if="item.labelPopoverConfig.show"
             v-bind:id="'label-modal' + i"
           >
@@ -83,7 +84,6 @@
               <div class="palette-header-container">
                 <div class="header">
                   <input
-                    contenteditable="true"
                     ref="labelName"
                     @keyup="saveLabelName($event,i,item.labelName)"
                     v-model="item.labelName"
@@ -116,6 +116,7 @@
         </Popover>
         <Popover :config="item.addActionPopoverConfig">
           <div
+            contenteditable="false"
             v-if="item.addActionPopoverConfig.show"
             v-bind:id="'add-action-modal' +
                                 i"
