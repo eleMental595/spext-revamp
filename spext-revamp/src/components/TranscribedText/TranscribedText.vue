@@ -60,7 +60,7 @@ export default {
         labelPopoverConfig: {
           show: false,
           isPositionFixed: false,
-          transition: "bounce-in-left",
+          transition: "bounce-in-top",
           style: {}
         },
         addActionPopoverConfig: {
@@ -81,7 +81,7 @@ export default {
         labelPopoverConfig: {
           show: false,
           isPositionFixed: false,
-          transition: "bounce-in-left",
+          transition: "bounce-in-top",
           style: {}
         },
         addActionPopoverConfig: {
@@ -102,7 +102,7 @@ export default {
         labelPopoverConfig: {
           show: false,
           isPositionFixed: false,
-          transition: "bounce-in-left",
+          transition: "bounce-in-top",
           style: {}
         },
         addActionPopoverConfig: {
