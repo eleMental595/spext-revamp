@@ -7,10 +7,17 @@
   .add-files-content {
     display: flex;
 
+	.action-content {
+		flex-grow: 5;
+		flex-basis: 0;
+		flex-shrink: 0;
+	  }
     .action-list {
       border-right: 1px solid #dee1e8;
       overflow-y: auto;
-
+		flex-grow: 2;
+		flex-basis: 0;
+		flex-shrink: 0; 
       height: 375px;
 
       .selected {
