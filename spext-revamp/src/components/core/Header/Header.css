@@ -6,7 +6,8 @@
   padding: 12px 32px;
   font-size: 1rem;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff;
 }
 
@@ -21,7 +22,8 @@
 .menu-item {
   color: #212529;
   /* padding: 0.25rem 1.5rem; */
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .direction-column {
@@ -92,7 +94,7 @@ nav .menu-middle {
   align-items: center;
   font-size: 14px;
   width: calc(100% / 3);
-  font-family: "QuicksandBold"
+  font-family: "QuicksandBold";
   /* flex-grow: 3;
   flex-basis: 0;
   flex-shrink: 0; */
@@ -108,6 +110,14 @@ nav .menu-middle .menu-middle-wrapper:hover {
 
 .menu-middle span {
   font-weight: bold;
+}
+.menu-middle .t-wrapper {
+  padding-right: 8px;
+}
+.menu-middle .capital-t-icon {
+  font-family: "Times";
+  border: 1px solid white;
+  padding: 1px 5px;
 }
 
 nav .nav-right-wrapper .arrow-back {

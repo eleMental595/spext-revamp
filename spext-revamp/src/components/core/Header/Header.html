@@ -10,14 +10,21 @@
       </div>
     </div>
     <div class="menu-middle anchor" @click="openTranscript">
-      <div class="menu-middle-wrapper" ref="editTranscript" v-bind:class="{
-        'menu-active': config.show }">
-        <i class="fa fa-h-square" style="margin-right: 8px;"></i>
+      <div
+        class="menu-middle-wrapper"
+        ref="editTranscript"
+        v-bind:class="{
+        'menu-active': config.show }"
+      >
+        <!-- <i class="fa fa-h-square" style="margin-right: 8px;"></i> -->
+        <span class="t-wrapper"><span class="capital-t-icon">T</span></span>
         <span>Transcript Mode</span>
-        <i class="fa fa-chevron-down" style="margin-left: 16px; vertical-align:
-          middle;"></i>
+        <i
+          class="fa fa-chevron-down"
+          style="margin-left: 16px; vertical-align:
+          middle;"
+        ></i>
       </div>
-
 
       <Popover :config="config">
         <div class="menu-item">
@@ -38,7 +45,9 @@
             </div>
             <div class="menu-element">
               <span class="label">Storyboard</span>
-              <span class="description">visualize the transcript as a grid</span>
+              <span class="description"
+                >visualize the transcript as a grid</span
+              >
             </div>
           </div>
           <div class="menu-list">
@@ -63,7 +72,7 @@
         </span>
         <i class="fa fa-search"></i>
         <i class="fa fa-link"></i>
-        <i class="fa fa-link"></i>
+        <i class="far fa-save"></i>
         <i class="fa fa-ellipsis-h"></i>
       </div>
       <div class="sub-menu-right">
