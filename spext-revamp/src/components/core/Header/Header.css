@@ -36,6 +36,9 @@
   padding: 8px;
   color: #324851;
 }
+.menu-item .menu-list:hover {
+  background-color: #f8f8f8;
+}
 
 .menu-list:not(:last-child) {
   border-bottom: 1px solid #ececec;
@@ -47,6 +50,7 @@
   align-self: center;
   padding: 6px;
   margin: 8px;
+  background-color: #ffffff;
 }
 
 .menu-item .menu-list .menu-element {
