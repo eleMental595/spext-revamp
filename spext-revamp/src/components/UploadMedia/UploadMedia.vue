@@ -17,6 +17,9 @@ export default {
     };
   },
   methods: {
+    uploadFromComputer() {
+      this.uploadStatus = "uploadFile";
+    },
     uploadFile() {
       if (this.titleName) {
         this.uploadStatus = "inprogress";

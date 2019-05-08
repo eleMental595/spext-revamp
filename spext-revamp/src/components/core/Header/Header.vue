@@ -24,6 +24,7 @@ export default {
   created() {
     this.config = {
       show: false,
+      transition: "bounce-in-top",
       style: {
         width: "300px",
         left: "",

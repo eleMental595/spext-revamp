@@ -8,6 +8,58 @@
     font-family: "QuicksandBold";
     font-size: 16px;
   }
+  .upload-from-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .row {
+      padding: 10px 0;
+    }
+    input[type="text"] {
+      border: none;
+      text-align: center;
+      outline: none;
+      border-bottom: 1px solid #c2c2c2;
+      padding: 4px 100px;
+    }
+    ::placeholder {
+      color: #b5b9bb;
+      font-family: "Quicksand";
+      font-size: 16px;
+    }
+    .or {
+      font-family: "QuicksandBold";
+      color: #324851;
+      font-size: 16px;
+    }
+    .btn-container {
+      display: flex;
+      align-items: center;
+      .btn-wrapper {
+        padding: 0 16px;
+        .btn {
+          padding: 8px;
+          cursor: pointer;
+          font-size: 14px;
+          border-radius: 5px;
+        }
+        .dropbox-btn {
+          font-family: "Quicksand";
+          border: 1px solid #324851;
+          background: white;
+          color: #324851;
+          outline: none;
+        }
+        .computer-btn {
+          font-family: "QuicksandBold";
+          border: none;
+          background: #1899f7;
+          color: #ffffff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
   .upload-media-container {
     display: flex;
     flex-direction: column;
@@ -28,11 +80,11 @@
       outline: none;
       font-family: "Quicksand";
       font-size: 16px;
+      text-align: center;
     }
     .upload-media-input {
       input[type="text"] {
         padding: 0px 80px;
-        width: 320px;
       }
     }
     .title-input {

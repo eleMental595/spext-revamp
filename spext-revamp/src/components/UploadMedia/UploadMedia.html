@@ -1,6 +1,24 @@
 <div class="parent-container">
   <div class="bold header">Upload Media</div>
   <div v-if="uploadStatus==='enter'">
+    <div class="upload-from-container">
+      <div class="row link-input">
+        <input type="text" placeholder="Copy paste a link here" />
+      </div>
+      <div class="row or">Or</div>
+      <div class="row btn-container">
+        <div class="btn-wrapper">
+          <button class="btn dropbox-btn">Upload from Dropbox</button>
+        </div>
+        <div class="btn-wrapper">
+          <button class="btn computer-btn" v-on:click="uploadFromComputer()">
+            Upload from Computer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-else-if="uploadStatus==='uploadFile'">
     <div class="upload-media-container">
       <div class="upload-media-input"><input type="text" /></div>
       <div class="bold title">Title</div>

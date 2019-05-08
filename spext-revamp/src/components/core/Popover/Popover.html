@@ -1,11 +1,12 @@
-<transition appear name="bounce">
-<div
-	v-if="config.show"
-	class="overlay"
-	:class="[(config.showFullScreen && config.show) === true ? 'full-screen': '']">
-	
-		<div v-bind:style="config.style" class="menu" id="menu">
-			<slot></slot>
-		</div>
-	</div>
+<transition appear :name="config.transition">
+  <div
+    v-if="config.show"
+    class="overlay"
+    :class="[(config.showFullScreen && config.show) === true ? 'full-screen': '']"
+    v-bind:style="{position:(!config.isPositionFixed)?'absolute':''}"
+  >
+    <div v-bind:style="config.style" class="menu" id="menu">
+      <slot></slot>
+    </div>
+  </div>
 </transition>
